@@ -1,7 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 
-export default function SpeechToText() {
-  const [transcript, setTranscript] = useState("");
+export default function SpeechToText({setTranscript}) {
   const [listening, setListening] = useState(false);
   const recognitionRef = useRef(null);
   const [fullTranscript, setFullTranscript] = useState("");
@@ -33,6 +32,7 @@ export default function SpeechToText() {
         if (finalTranscript) {
             // Append new final transcript chunk to stored full transcript
             setFullTranscript((prev) => prev + finalTranscript);
+            setTranscript(fullTranscript);
         }
     };
 
