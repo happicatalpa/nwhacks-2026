@@ -1,6 +1,4 @@
-Absolutely! Here's a clear, easy-to-follow README section your teammates can use to set up the React + Vite app locally on their laptops:
 
----
 
 # nwHacks 2026 — Local Setup Guide
 
