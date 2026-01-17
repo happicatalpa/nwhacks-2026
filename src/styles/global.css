@@ -5,6 +5,17 @@
 body {
   margin: 0;
   font-family: system-ui, sans-serif;
-  background: #111;
-  color: white;
+  background: #90BEDE;
+  color: #DFFDFF;
 }
+
+button {
+  background-color: #DFFDFF;
+  color: #90BEDE;
+  border: none;
+  font-weight: bold;
+  padding: 5px 30px;
+  margin: 5px;
+  border-radius: 10px;
+  cursor: pointer;
+} 
