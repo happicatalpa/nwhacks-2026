@@ -5,7 +5,7 @@ export default function Camera() {
 
   useEffect(() => {
     navigator.mediaDevices
-      .getUserMedia({ video: true })
+      .getUserMedia({ video: true})
       .then(stream => {
         videoRef.current.srcObject = stream;
       });
