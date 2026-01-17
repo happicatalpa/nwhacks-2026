@@ -4,6 +4,8 @@ export default function SpeechToText() {
   const [transcript, setTranscript] = useState("");
   const [listening, setListening] = useState(false);
   const recognitionRef = useRef(null);
+  const [fullTranscript, setFullTranscript] = useState("");
+
 
   useEffect(() => {
     // Check if browser supports the API
@@ -21,17 +23,17 @@ export default function SpeechToText() {
     recognition.continuous = true; // keep listening until stopped
 
     recognition.onresult = (event) => {
-      let interimTranscript = "";
-      for (let i = event.resultIndex; i < event.results.length; i++) {
-        const transcriptPiece = event.results[i][0].transcript;
-        if (event.results[i].isFinal) {
-          setTranscript((prev) => prev + transcriptPiece + " ");
-        } else {
-          interimTranscript += transcriptPiece;
+        let finalTranscript = "";
+        for (let i = event.resultIndex; i < event.results.length; i++) {
+            if (event.results[i].isFinal) {
+            finalTranscript += event.results[i][0].transcript + " ";
+            }
         }
-      }
-      // Optional: show interim results if you want
-      // console.log("Interim:", interimTranscript);
+
+        if (finalTranscript) {
+            // Append new final transcript chunk to stored full transcript
+            setFullTranscript((prev) => prev + finalTranscript);
+        }
     };
 
     recognition.onerror = (event) => {
@@ -56,7 +58,7 @@ export default function SpeechToText() {
       <button onClick={toggleListening}>
         {listening ? "Stop Listening" : "Start Listening"}
       </button>
-      <p>{transcript || "Your speech will appear here..."}</p>
+      <p>{fullTranscript || "Your speech will appear here..."}</p>
     </div>
   );
 }

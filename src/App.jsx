@@ -1,28 +1,34 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
-import Camera from './components/Camera.jsx';
-import Timer from './components/Timer.jsx'
-import SpeechToText from './features/speech/speech-to-text.jsx'
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+import {
+  BrowserRouter,
+  Routes,
+  Route,
+  Link
+} from "react-router-dom";
 
+import Home from './pages/home.jsx';
+import Presenting from './pages/presenting.jsx';
+import Setup from './pages/setup.jsx';
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <>
-      <h1>Presentation demo!!</h1>
-      <div> 
-        <Timer start={30} />
-        <SpeechToText />
-      </div>
-      <div> 
-        <Camera />
+    <BrowserRouter>
+      <nav>
+        {/* Navigation links */}
+        <Link to="/">Home</Link> |{" "}
+        <Link to="/about">Presentation</Link> |{" "}
+        <Link to="/setup">Setup</Link>
+      </nav>
 
-      </div>
-    </>
-  )
+      <Routes>
+        <Route path="/" element={<Home />} />          {/* Home page */}
+        <Route path="/about" element={<Presenting />} />    {/* About page */}
+        <Route path="/setup" element={<Setup />} />    {/* About page */}
+    
+      </Routes>
+    </BrowserRouter>
+  );
 }
 
 export default App
