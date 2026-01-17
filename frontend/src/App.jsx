@@ -16,7 +16,7 @@ import Results from './pages/results.jsx'
 function App() {
     const [script, setScript] = useState("");
     const [transcript, setTranscript] = useState("");
-    const [timeLimit, setTimeLimit] = useState("");
+    const [timeLimitSeconds, setTimeLimitSeconds] = useState("");
 
 
     return (
@@ -31,8 +31,8 @@ function App() {
 
         <Routes>
         <Route path="/" element={<Home />} />          {/* Home page */}
-        <Route path="/setup" element={<Setup setScript={setScript} />} />    {/* About page */}
-        <Route path="/present" element={<Presenting setTranscript={setTranscript}/>} />    {/* About page */}
+        <Route path="/setup" element={<Setup setScript={setScript} setTimeLimitSeconds={setTimeLimitSeconds} />} />    {/* About page */}
+        <Route path="/present" element={<Presenting setTranscript={setTranscript} timeLimitSeconds={timeLimitSeconds}/>} />    {/* About page */}
         <Route path="/results" element={<Results />} />    {/* About page */}
 
         </Routes>

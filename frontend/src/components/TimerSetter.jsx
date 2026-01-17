@@ -1,6 +1,6 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
-export default function TimerSetter() {
+export default function TimerSetter({ setTimeLimitSeconds }) {
   const [minutes, setMinutes] = useState(0);
   const [seconds, setSeconds] = useState(0);
 
@@ -18,6 +18,11 @@ export default function TimerSetter() {
 
   // Format time with leading zeros
   const format = (num) => num.toString().padStart(2, "0");
+
+  useEffect(() => {
+        const totalSeconds = minutes * 60 + seconds;
+        setTimeLimitSeconds(totalSeconds);
+    }, [minutes, seconds, setTimeLimitSeconds]);
 
   return (
     <div style={{ fontFamily: "monospace", fontSize: "2rem", display: "inline-flex", alignItems: "center", gap: "1rem" }}>

@@ -2,12 +2,14 @@ import TimerSetter from "../components/TimerSetter";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
-export default function Setup({ setScript }) {
-    const [input, setInput] = useState("lorem ipsum dolar...");
+export default function Setup({ setScript, setTimeLimitSeconds }) {
+    const [textInput, setTextInput] = useState("lorem ipsum dolar...");
+    const [localTimer, setLocalTimer] = useState(30);
     const navigate = useNavigate();
 
     const handleNext = () => {
-        setScript(input);
+        setScript(textInput);
+        // setTimeLimitSeconds(localTimer);
         navigate("/present");
     }
 
@@ -19,14 +21,16 @@ export default function Setup({ setScript }) {
             <textarea 
                 rows="10" 
                 cols="50" 
-                defaultValue={input} 
-                onChange={(e) => setInput(e.target.value)} 
+                defaultValue={textInput} 
+                onChange={(e) => setTextInput(e.target.value)} 
             />
         </div>
 
         <div>
             <h2>Set the timer</h2>
-            <TimerSetter />
+            <TimerSetter
+                setTimeLimitSeconds={setTimeLimitSeconds}
+            />
         </div>
         <button onClick={handleNext}>Start Presentation!</button>
     </div>
