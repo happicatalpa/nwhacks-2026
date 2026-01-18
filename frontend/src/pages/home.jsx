@@ -8,8 +8,9 @@ export default function Home() {
             <h1 id="name">Happy <br /> Yapper</h1>
             <div id="home-buttons">
                 <Link to="/setup">
-                    <button id="large">START</button>
+                    <button class="btn btn-large">START</button>
                 </Link>
+                <button class="btn btn-large">Help</button>
             </div>
             <img src="/background.png" id="background"></img>
         </div>

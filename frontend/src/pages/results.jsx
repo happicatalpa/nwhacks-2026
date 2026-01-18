@@ -27,13 +27,13 @@ export default function Results({script, transcript}) {
               <p>Covered points: {checkedKeyPoints}</p>
           </div>
 
-          <Link to="/">
-            <button onClick={handleGetKeyPoints} id="small">Back to Start</button>
-          
-          </Link>
-
-      </div>
-
+        <Link to="/">
+          <button onClick={handleGetKeyPoints} class="btn btn-small">Back to Start</button>
+        
+        </Link>
+        
+        
+    </div>
       <img id="yaptrainerpos" src = "/yaptrainer.png"></img>
     </div>
   );
