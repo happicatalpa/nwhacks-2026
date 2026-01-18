@@ -7,6 +7,7 @@ body {
     font-family: 'Montserrat';
     background: #2C6E49;
     color: #FFC9B9;
+    min-height: 100vh;
 }
 
 .camera {
@@ -14,9 +15,14 @@ body {
   background-color: #FFC9B9;
   border-radius: 30px;
   overflow: hidden;
-  display: inline-block;
+  display: block;
   position: relative;
-  left: center;
+}
+
+.camera-wrapper{
+    position:relative;
+    display:inline-block;
+    max-width:90vw;
 }
 
 .home {
@@ -152,9 +158,11 @@ h2 {
 #timer-buttons{
     position: absolute;
     left: 50%;
-    bottom: 15%;
+    bottom: -40%;
     transform: translateX(-50%);
     z-index:20;
+    display:flex;
+    justify-content: center;
 }
 
 
