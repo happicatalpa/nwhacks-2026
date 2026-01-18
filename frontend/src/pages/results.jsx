@@ -60,8 +60,10 @@ export default function Results({script, transcript, currentSeconds, timeLimit})
   return (
     <div>
       <div className = "resultsPage"> 
-          <h1 className="sp-title">Congradulations!<br /> Here are your results!</h1>
-          <TimeScore timeLimit={timeLimit} currentTime={currentSeconds} />
+          <h1 className="sp-title">RESULTS</h1>
+          <div className="time-score">
+            <TimeScore timeLimit={timeLimit} currentTime={currentSeconds} />
+          </div>
           {loading ? (
         <p>Loading results...</p>
       ) : (
@@ -78,6 +80,7 @@ export default function Results({script, transcript, currentSeconds, timeLimit})
         </Link>
       </div>
       <img id="yaptrainerpos" src = "/yaptrainer.png"></img>
+      <img className="background" src="background2.png"></img>
     </div>
   );
 }

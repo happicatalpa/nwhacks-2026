@@ -7,7 +7,7 @@ body {
     font-family: "Nunito", system-ui, sans-serif;
     background: #2C6E49;
     color: #FFC9B9;
-    min-height: 100vh;
+    /* min-height: 100vh; */
 }
 
 .camera {
@@ -55,7 +55,9 @@ canvas {
   height: fit-content;
   border-radius: 15px;
   border: 10px solid #FFC9B9;
-  padding: 2rem;
+  padding: 1rem;
+  background-color: #FEFEE3;
+  color: #4d3f36;
 }
 
 
@@ -65,8 +67,9 @@ canvas {
   right: 6.5%;
 }
 
-h2 {
-  font-size: 180%;
+.timer-h2 {
+  font-size: 200%;
+  color: #4d3f36;
 }
 
 .sp-title {
@@ -171,11 +174,16 @@ h2 {
 }
 
 .results {
+  position: relative;
+  left: 25%;
+  top: 10%;
   border: 10px solid #FFC9B9;
   border-radius: 10px;
-  padding: 1rem;
-  width: auto;
-  height: auto;
+  padding: 10px;
+  width: 50%;
+  height: 320px;
+  font-size: 150%;
+  text-align: left;
 }
 
 .background {
@@ -242,11 +250,17 @@ h2 {
   z-index: 1; 
 }
 
+.time-score {
+  font-size: 120%;
+  margin-bottom: 1rem;
+}
+
 #yaptrainerpos { 
-  position: fixed; 
-  bottom: 0px; 
-  right: 0px; 
-  width: clamp(900px, 16vw, 900px); 
+  position: absolute; 
+  z-index: 10;
+  bottom: -7%; 
+  right: -10%; 
+  width: clamp(70%, 80%, 100%); 
 
   height: auto; 
   transform: translate(15%, 15%);
