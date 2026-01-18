@@ -6,96 +6,97 @@ body {
     margin: 0;
     font-family: 'Times New Roman', Times, serif;
     background: #2C6E49;
-    color: #FEFEE3;
+    color: #FFC9B9;
 }
 
-#camera {
-    border: 15px solid #FFC9B9;
-    background-color: #FFC9B9;
-    border-radius: 30px;
-    overflow: hidden;
-    display: inline-block;
-    position: relative;
-    left: center;
+.camera {
+  border: 15px solid #FFC9B9;
+  background-color: #FFC9B9;
+  border-radius: 30px;
+  overflow: hidden;
+  display: inline-block;
+  position: relative;
+  left: center;
 }
 
-div#home {
-    font-size: 90px;
+.home {
+  font-size: 90px;
 }
 
-div#timer-setup {
-    position: absolute;
-    top: 220px;
-    right: 85px;
-    border-radius: 15px;
-    border: 10px solid #FFC9B9;
-    padding: 10px
+.timer-setup {
+  position: absolute;
+  top: 25%;
+  right: 85px;
+  border-radius: 15px;
+  border: 10px solid #FFC9B9;
+  padding: 10px
 }
 
-div#setup-button {
-    position: absolute;
-    bottom: 145px;
-    right: 30px;
-}
-
-h1#setup {
-    position: absolute;
-    top: 20px;
-    left: 50%;
-    transform: translateX(-50%);
-    font-size: 80px;
-}
-
-h2#setup-text {
-    font-size: 40px;
-    position: absolute;
-    top: 120px;
-    left: 60px;
+.setup-button {
+  position: absolute;
+  top: 67%;
+  right: 3%;
 }
 
 h2 {
-    font-size: 35px;
+  font-size: 180%;
 }
 
-textarea {
-    position: absolute;
-    top: 220px;
-    left: 50px;
-    width: 1000px;
-    height: 600px;
-    resize: none;
-    border: 10px solid #FFC9B9;
-    border-radius: 15px;
+.sp {
+  position: absolute;  
+  min-height: 70vh;
+  margin: 0 auto;             
+  padding-top: 2.5rem;         
 }
 
-button {
-    background-color: #FFC9B9;
-    color: #2C6E49;
-    font-weight: bold;
-    padding: 10px 30px;
-    margin: 5px;
-    border-radius: 10px;
-    cursor: pointer;
-    transition: transform 0.5s ease-in-out;
+.sp-input {
+  width: 50%;
+  min-height: 68vh;
+  font-size: clamp(1rem, 1.2vw, 1.1rem);
+  padding: 1rem;
+  border: 0.6rem solid #FFC9B9;
+  border-radius: 15px;
+  resize: none;
+  box-sizing: border-box;
 }
 
-button#small {
-    font-size: 25px;
-    border: none;
+.sp-text {
+  position: relative;
+  top: -10%;
+  left: 20%;
+  font-size: clamp(1.2rem, 2.5vw, 1.8rem);
 }
 
-button#large {
-    font-size: 50px;
-    position: relative;
-    top: 100px;
-    border: none;
+.btn {
+  background-color: #FFC9B9;
+  color: #2C6E49;
+  font-weight: bold;
+  padding: 10px 30px;
+  margin: 5px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: transform 0.5s ease-in-out;
+  border: none;
 }
 
-button:hover {
-    transform: translateY(-2px);
-    transform: scale(1.05);
-    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.3);
-    transition: transform 0.5s ease-in-out;
+.btn-large {
+  font-size: 3rem;
+  position: relative;
+  top: 100px; 
+  border: none;
+}
+
+.btn-small {
+  font-size: 1.5rem;
+  position: relative;
+  border: none;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+  transform: scale(1.05);
+  box-shadow: 0 6px 10px rgba(0,0,0,0.3);
+  transition: transform 0.5s ease-in-out;
 }
 
 .audience {

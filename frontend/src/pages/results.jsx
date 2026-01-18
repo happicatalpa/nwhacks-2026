@@ -27,7 +27,7 @@ export default function Results({script, transcript}) {
         </div>
 
         <Link to="/">
-          <button onClick={handleGetKeyPoints} id="small">Back to Start</button>
+          <button onClick={handleGetKeyPoints} class="btn btn-small">Back to Start</button>
         
         </Link>
         
