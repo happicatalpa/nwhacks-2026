@@ -25,29 +25,79 @@ div#home {
   font-size: 90px;
 }
 
+div#timer-setup {
+  position: absolute;
+  top: 220px;
+  right: 80px;
+  border-radius: 15px;
+  border: 10px solid #DFFDFF;
+  padding: 10px
+}
+
+h1#setup {
+  position: absolute;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 80px;
+}
+
+h2#setup-text {
+  font-size: 40px;
+  position: absolute;
+  top: 120px;   
+  left: 60px;
+}
+
+textarea {
+  position: absolute;
+  top: 220px;
+  left: 50px;
+  width: 1000px;    
+  height: 500px;    
+  resize: none;  
+  border: 10px solid #DFFDFF;
+  border-radius: 15px; 
+}
+
 button {
   background-color: #DFFDFF;
   color: #90BEDE;
-}
-
-button#large {
-  font-size: 50px;
-  position: relative;
-  top: 100px; 
-  border: none;
   font-weight: bold;
   padding: 10px 30px;
   margin: 5px;
   border-radius: 10px;
   cursor: pointer;
   transition: transform 0.5s ease-in-out;
+}
+
+button#small {
+  font-size: 25px;
+  border: none;
+} 
+
+button#large {
+  font-size: 50px;
+  position: relative;
+  top: 100px; 
+  border: none;
 } 
 
 button:hover {
   transform: translateY(-2px);
+  transform: scale(1.05);
   box-shadow: 0 6px 10px rgba(0,0,0,0.3);
   transition: transform 0.5s ease-in-out;
-  transform: scale(1.05);
 }
 
+.audience {
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  transform: translateX(-50%);
+
+  width: 640px;
+  z-index: 10;
+  pointer-events: none;
+}
 

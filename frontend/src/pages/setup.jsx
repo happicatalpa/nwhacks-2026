@@ -14,9 +14,9 @@ export default function Setup({ setScript, setTimeLimitSeconds }) {
 
     return (
     <div> 
-        <h1>SETUP</h1>
+        <h1 id="setup">SETUP</h1>
         <div>
-            <h2>Input your script here!</h2>
+            <h2 id="setup-text">Input your script here!</h2>
             <textarea 
                 rows="10" 
                 cols="50" 
@@ -25,13 +25,14 @@ export default function Setup({ setScript, setTimeLimitSeconds }) {
             />
         </div>
 
-        <div>
+        <div id="timer-setup">
             <h2>Set the timer</h2>
             <TimerSetter
                 setTimeLimitSeconds={setTimeLimitSeconds}
             />
         </div>
         <button id="large" onClick={handleNext}>Start Presentation!</button>
+        <button id="small" onClick={handleNext}>Back</button>
     </div>
     );
 }

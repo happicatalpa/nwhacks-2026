@@ -18,7 +18,7 @@ export default function Results({script, transcript}) {
     <div> 
         <h1>WOOHOO you finished your cool talk</h1>
         <p>SCORE: </p>
-        <button onClick={handleGetKeyPoints}>Try Again</button>
+        <button onClick={handleGetKeyPoints} id="small">Try Again</button>
         <p>Key points: {keyPoints}</p>
         <p>Covered points: {checkedKeyPoints}</p>
     </div>
