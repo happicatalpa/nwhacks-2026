@@ -115,3 +115,19 @@ button:hover {
     position:relative;
     top:0;
 }
+
+.resultsPage{
+  position: relative;
+  z-index: 1; 
+}
+
+#yaptrainerpos { 
+  position: fixed; 
+  bottom: 0px; 
+  right: 0px; 
+  width: clamp(900px, 16vw, 900px); 
+
+  height: auto; 
+  transform: translate(15%, 15%);
+  z-index: -1;
+  pointer-events: none; }
