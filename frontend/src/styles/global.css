@@ -185,6 +185,17 @@ p.dark {
   text-align: left;
 }
 
+.star {
+    width: 70px;
+
+}
+.star-container {
+    display: flex;
+  gap: 4px; /* Optional: space between stars */
+  align-items: center; /* vertically center if needed */
+  justify-content: center;
+}
+
 .background {
     position: fixed;
     left: 50%;
@@ -263,6 +274,7 @@ p.dark {
 
 #yaptrainerpos { 
   position: absolute; 
+
   bottom: -7%; 
   right: -10%; 
   width: clamp(70%, 80%, 100%); 

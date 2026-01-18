@@ -1,9 +1,10 @@
-export default function TimeScore ({ timeLimit, currentTime }) {
+export default function TimeScore ({ timeLimit, currentTime, setScore }) {
     console.log("time limit:", timeLimit);
     console.log("current time: ", currentTime);
     if (currentTime <= timeLimit) {
         const leftoverTimeSeconds = timeLimit - currentTime;
         const leftoverTimeFormatted = formatTime(leftoverTimeSeconds);
+        setScore(1);
         return (<div>{`Good job! You finished on time with ${leftoverTimeFormatted} remaining!`}</div>)
 
     }
