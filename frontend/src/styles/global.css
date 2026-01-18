@@ -74,6 +74,8 @@ h2 {
 
 .btn {
   background-color: #FFC9B9;
+  width: auto;
+  height: auto;
   color: #4d3f36;
   font-weight: bold;
   padding: 5% 10%;
@@ -85,12 +87,12 @@ h2 {
 }
 
 .btn-large {
-  font-size: 3rem;
+  font-size: 3vw;
   border: none;
 }
 
 .btn-small {
-  font-size: 1.5rem;
+  font-size: 3vw;
   border: none;
 }
 
