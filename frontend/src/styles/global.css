@@ -55,8 +55,9 @@ canvas {
   height: fit-content;
   border-radius: 15px;
   border: 10px solid #FFC9B9;
-  padding: 1rem;
+  padding: 2rem;
 }
+
 
 .setup-button {
   position: absolute;
