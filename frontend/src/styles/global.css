@@ -4,7 +4,7 @@
 
 body {
     margin: 0;
-    font-family: 'Times New Roman', Times, serif;
+    font-family: 'Montserrat';
     background: #2C6E49;
     color: #FFC9B9;
 }
@@ -67,7 +67,7 @@ h2 {
 
 .btn {
   background-color: #FFC9B9;
-  color: #2C6E49;
+  color: #4d3f36;
   font-weight: bold;
   padding: 10px 30px;
   margin: 5px;
