@@ -8,7 +8,6 @@ body {
     background: #2C6E49;
     color: #FFC9B9;
     min-height: 100vh;
-    overflow-y: hidden;
 }
 
 .camera {
@@ -171,7 +170,7 @@ h2 {
 }
 
 .background {
-    position: absolute;
+    position: fixed;
     left: 50%;
     bottom: 0;
     transform: translateX(-50%);
@@ -246,5 +245,5 @@ h2 {
   pointer-events: none; }
 
 .speech{
-    font-size:30px;
+    font-size:25px;
 }
