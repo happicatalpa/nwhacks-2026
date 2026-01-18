@@ -15,7 +15,7 @@ export default function Presenting({ setTranscript, timeLimitSeconds }) {
         <Timer start={timeLimitSeconds} />
         <SpeechToText setTranscript={setTranscript}/>
       </div>
-      <div> 
+      <div id="camera"> 
         <Camera />
 
       </div>
