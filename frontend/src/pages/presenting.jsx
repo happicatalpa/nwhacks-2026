@@ -7,25 +7,28 @@ import SpeechToText from '../features/speech/speech-to-text.jsx'
 import { Link } from "react-router-dom";
 
 export default function Presenting({ setTranscript, timeLimitSeconds }) {
-  const [count, setCount] = useState(0)
+    const [count, setCount] = useState(0)
 
 
-  return (
-    <>
-      <h1>Presentation demo!!</h1>
-      <div> 
-        <Timer start={timeLimitSeconds} />
-        <SpeechToText setTranscript={setTranscript}/>
-      </div>
-        <div id="camera"> 
-            <Camera />
-            <Audience />
-        </div>
-        <Link to="/results">
-            <button id = "large">End Session</button>
-        </Link>
-        
-    </>
-  )
+    return (
+        <>
+            <h1>Presentation demo!!</h1>
+            <div>
+                <Timer start={timeLimitSeconds} />
+                <SpeechToText setTranscript={setTranscript} />
+            </div>
+            <div id="camera">
+                <Camera />
+                <Audience />
+            </div>
+            <div id="timer-buttons">
+                <Link to="/results">
+                    <button>End Session</button>
+                </Link>
+            </div>
+
+
+        </>
+    )
 }
 

@@ -111,3 +111,7 @@ button:hover {
   pointer-events: none;
 }
 
+#timer-buttons{
+    position:relative;
+    top:0;
+}
