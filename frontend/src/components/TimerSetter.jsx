@@ -28,18 +28,18 @@ export default function TimerSetter({ setTimeLimitSeconds }) {
     <div style={{ fontFamily: "monospace", fontSize: "2rem", display: "inline-flex", alignItems: "center", gap: "1rem" }}>
       {/* Minutes */}
       <div style={{ textAlign: "center" }}>
-        <button class="btn btn-small" onClick={incMinutes} aria-label="Increase minutes" style={{ display: "block" }}>▲</button>
+        <button className="btn btn-small btn-timer" onClick={incMinutes} aria-label="Increase minutes" style={{ display: "block" }}>▲</button>
         <div>{format(minutes)}</div>
-        <button class="btn btn-small" onClick={decMinutes} aria-label="Decrease minutes" style={{ display: "block" }}>▼</button>
+        <button className="btn btn-small btn-timer" onClick={decMinutes} aria-label="Decrease minutes" style={{ display: "block" }}>▼</button>
       </div>
 
       <div>:</div>
 
       {/* Seconds */}
       <div style={{ textAlign: "center" }}>
-        <button class="btn btn-small" onClick={incSeconds} aria-label="Increase seconds" style={{ display: "block" }}>▲</button>
+        <button className="btn btn-small btn-timer" onClick={incSeconds} aria-label="Increase seconds" style={{ display: "block" }}>▲</button>
         <div>{format(seconds)}</div>
-        <button class="btn btn-small" onClick={decSeconds} aria-label="Decrease seconds" style={{ display: "block" }}>▼</button>
+        <button className="btn btn-small btn-timer" onClick={decSeconds} aria-label="Decrease seconds" style={{ display: "block" }}>▼</button>
       </div>
     </div>
   );

@@ -18,17 +18,18 @@ export default function Presenting({ setTranscript, timeLimitSeconds }) {
         <>
             <div>
                 <Timer start={timeLimitSeconds} setSessionEnded={setSessionEnded} />
-                <SpeechToText setTranscript={setTranscript} sessionEnded={sessionEnded} />
+                <SpeechToText setTranscript={setTranscript} sessionEnded={sessionEnded}  />
             </div>
-            <div class="camera">
+            <div className="camera">
                 <Camera />
                 <Audience />
             </div>
             <div id="timer-buttons">
                 <Link to="/results">
-                    <button className="btn btn-large" onClick={() => setSessionEnded(true)}>End Session</button>
+                    <button onClick={() => setSessionEnded(true)}>End Session</button>
                 </Link>
             </div>
+
 
         </>
     )
