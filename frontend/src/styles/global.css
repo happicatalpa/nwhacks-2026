@@ -142,6 +142,10 @@ h2 {
     height:90%;
 }
 
+#name{
+    font-size:200px;
+    position:fixed;
+}
 .resultsPage{
   position: relative;
   z-index: 1; 
