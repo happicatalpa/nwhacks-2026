@@ -4,11 +4,14 @@ import Camera from '../components/Camera.jsx';
 import Audience from '../components/Audience.jsx';
 import Timer from '../components/Timer.jsx'
 import SpeechToText from '../features/speech/speech-to-text.jsx'
+import MediaPipeProcessor from '../components/MediaPipeProcessor.jsx';
 import { Link } from "react-router-dom";
+import { useRef } from "react";
 
 export default function Presenting({ setTranscript, timeLimitSeconds, currentSeconds, setCurrentSeconds }) {
     const [count, setCount] = useState(0)
     const [sessionEnded, setSessionEnded] = useState(false);
+    const videoRef = useRef(null);
 
     function endSession() {
         setSessionEnded(true);
@@ -23,7 +26,8 @@ export default function Presenting({ setTranscript, timeLimitSeconds, currentSec
             </div>
             <div className="camera-wrapper">
                 <div className="camera">
-                    <Camera />
+                    <Camera videoRef={videoRef} />
+                    <MediaPipeProcessor videoRef={videoRef} />
                     <Audience />
                 </div>
                 <div id="timer-buttons">
