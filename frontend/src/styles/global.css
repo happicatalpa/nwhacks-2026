@@ -37,11 +37,18 @@ body {
 .setup-button {
   position: absolute;
   bottom: 6%;
-  right: 3%;
+  right: 8%;
 }
 
 h2 {
   font-size: 180%;
+}
+
+.sp-title {
+  position: relative;
+  margin: 0 auto;
+  text-align: center;
+  font-size: clamp(2rem, 5vw, 5rem);
 }
 
 .sp-input {
@@ -78,7 +85,7 @@ h2 {
 }
 
 .btn-large {
-  font-size: 300%;
+  font-size: 3rem;
   border: none;
 }
 
