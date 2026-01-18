@@ -52,11 +52,12 @@ canvas {
   top: 23%;
   right: 5%;
   width: 20%;
-  height: 35%;
+  height: fit-content;
   border-radius: 15px;
   border: 10px solid #FFC9B9;
-  padding: 10px
+  padding: 2rem;
 }
+
 
 .setup-button {
   position: absolute;

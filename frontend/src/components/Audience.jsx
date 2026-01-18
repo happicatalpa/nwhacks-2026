@@ -1,7 +1,19 @@
 import React from "react";
-import audience from '/happynwhacks26.png';
+import { useState, useEffect } from "react";
+import happyAudience from '/happynwhacks26.png';
+import sadAudience from '/sadnwhacks26.png';
 
-function Audience() {
+function Audience({timeLimit, currentTime}) {
+    const [audience, setAudience] = useState(happyAudience);
+
+    useEffect(() => {
+        if (currentTime > timeLimit) {
+            setAudience(sadAudience);
+        }
+
+    }, [currentTime])
+    
+
   return (
     <div>
       <img src = {audience} className="audience"/>

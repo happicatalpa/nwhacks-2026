@@ -27,7 +27,8 @@ Definition of "key point":
 - Do NOT include examples, filler details, or repeated ideas.
 
 Rules:
-- Extract roughly 1 point for every 2 sentences 
+- Extract roughly 1 key point for every 40 words
+- if there is less than 40 words then extract 1 main point 
 - Keep the wording clear and short (one sentence or phrase per point).
 - Return ONLY a valid JSON array of strings.
 - Do NOT include explanations, comments, or extra text.
