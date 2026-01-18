@@ -57,7 +57,7 @@ export default function SpeechToText({ sessionEnded, setTranscript }) {
 
   return (
     <div>
-      <p>{lastTranscript || "Listening..."}</p>
+      <p className="speech">{lastTranscript || "Listening..."}</p>
     </div>
   );
 }
