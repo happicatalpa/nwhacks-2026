@@ -13,19 +13,26 @@ export default function Timer({ start = 60, currentSeconds, setCurrentSeconds })
 
         const intervalId = setInterval(() => {
             setTimeLeft((t) => t - 1);
+            console.log("time left seconds: ", timeLeft);
+            console.log("current seconds: ", currentSeconds);
+
         }, 1000);
 
         return () => clearInterval(intervalId);
     }, [timeLeft]);
 
     useEffect(() => {
+        console.log('Setting up interval for currentSeconds');
+        setCurrentSeconds(0);
 
         const intervalId = setInterval(() => {
             setCurrentSeconds((t) => t + 1);
+            
         }, 1000);
 
+        console.log('Clearing interval for currentSeconds');
         return () => clearInterval(intervalId);
-    }, [currentSeconds]);
+    }, []);
 
     // Format timeLeft seconds into MM:SS
     const formatTime = (seconds) => {

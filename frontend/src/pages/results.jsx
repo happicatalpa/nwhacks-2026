@@ -4,13 +4,20 @@ import { Link } from "react-router-dom";
 import { getKeyPoints, getCheckedKeyPoints } from '../features/score/SpeechScore.jsx'
 import { useEffect, useState } from 'react'
 import TimeScore from "../features/score/TimeScore.jsx";
+import { useNavigate } from "react-router-dom";
 
 export default function Results({script, transcript, currentSeconds, timeLimit}) {
     const [keyPoints, setKeyPoints] = useState('');
     const [checkedKeyPoints, setCheckedKeyPoints] = useState('');
     const [loading, setLoading] = useState(false);
+    const [score, setScore] = useState(5);
+    const navigate = useNavigate();
 
     console.log("current transcript: " + transcript);
+
+    const handleNext = () => {
+        navigate("/");
+    }
 
      useEffect(() => {
         async function fetchKeyPoints() {
@@ -36,18 +43,6 @@ export default function Results({script, transcript, currentSeconds, timeLimit})
             console.log(keyPointsArray);
             const checkedKeyPointsArray = JSON.parse(checkedKeyPoints);
             console.log(checkedKeyPointsArray);
-
-
-            // keyPointsArray.forEach(point => {
-            //     if (checkedKeyPointsArray.includes(point)) {
-            //         resultText += point + "✅\n";
-            //     } else {
-            //         resultText += point + "❌\n";
-            //     }
-                
-            // });
-
-            // return resultText;
 
             return (<div>
                 {keyPointsArray.map((point, index) => {
@@ -89,7 +84,7 @@ export default function Results({script, transcript, currentSeconds, timeLimit})
       
 
         <Link to="/">
-          <button className="btn-result">BACK TO START</button>
+          <button className="btn-result" onClick={handleNext}>BACK TO START</button>
         </Link>
       </div>
       <img id="yaptrainerpos" src = "/yaptrainer.png"></img>
