@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import '../App.css'
 import Camera from '../components/Camera.jsx';
+import Audience from '../components/Audience.jsx';
 import Timer from '../components/Timer.jsx'
 import SpeechToText from '../features/speech/speech-to-text.jsx'
 
@@ -15,10 +16,10 @@ export default function Presenting({ setTranscript, timeLimitSeconds }) {
         <Timer start={timeLimitSeconds} />
         <SpeechToText setTranscript={setTranscript}/>
       </div>
-      <div id="camera"> 
-        <Camera />
-
-      </div>
+        <div id="camera"> 
+            <Camera />
+            <Audience />
+        </div>
     </>
   )
 }
