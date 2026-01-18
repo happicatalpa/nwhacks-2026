@@ -6,18 +6,29 @@ import {
   Route,
   Link
 } from "react-router-dom";
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 import Home from './pages/home.jsx';
 import Presenting from './pages/presenting.jsx';
 import Setup from './pages/setup.jsx';
 import Results from './pages/results.jsx'
 
+function ResetStates() {
+    
+}
+
 function App() {
     const [script, setScript] = useState("");
     const [transcript, setTranscript] = useState("");
     const [timeLimitSeconds, setTimeLimitSeconds] = useState("");
     const [currentSeconds, setCurrentSeconds] = useState(0);
+
+    useEffect(() => {
+        setScript("");
+        setTranscript("");
+        setTimeLimitSeconds("");
+        setCurrentSeconds(0);
+    }, []);
 
 
     return (

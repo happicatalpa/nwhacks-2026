@@ -15,12 +15,30 @@ headers = {
 }
 
 def request_key_points(script):
-    prompt = (
-        "Take the following script and identify the key points of the script. "
-        "Return a list of key points formatted as an array in this exact format with no additional text: "
-        '["key point 1", "key point 2", "key point 3"]\n\n'
-        "Here is the script:\n" + script
-    )
+    prompt = prompt = f"""
+You are given a presentation script.
+
+Task:
+Identify the main key points of the script.
+
+Definition of "key point":
+- A key point is a main idea or takeaway the speaker is trying to communicate.
+- Key points should be high-level and concise.
+- Do NOT include examples, filler details, or repeated ideas.
+
+Rules:
+- Extract roughly 1 point for every 2 sentences 
+- Keep the wording clear and short (one sentence or phrase per point).
+- Return ONLY a valid JSON array of strings.
+- Do NOT include explanations, comments, or extra text.
+
+Output format (must match exactly):
+["key point 1", "key point 2", "key point 3"]
+
+Script:
+{script}
+"""
+
 
     data = {
         "model": "google/gemini-3-flash-preview",  # or any model OpenRouter supports
@@ -39,14 +57,34 @@ def request_key_points(script):
     return text
 
 def compare_points_to_transcript(key_points, transcript):
-    prompt = (
-        "Read the following transcription. Then, filter the following list of key points, "
-        "keeping only the items that were covered in the transcription. "
-        "Return the list in the exact same format with no additional words. Here's the list of points:\n"
-        + key_points
-        + "\nHere is the full transcript:\n"
-        + transcript
-    )
+    prompt = f"""
+You are given:
+1) A list of key points
+2) A transcript of a spoken presentation
+
+Task:
+Identify which key points were covered in the transcript.
+
+Definition of "covered":
+- A key point is considered covered if the transcript mentions it directly OR
+  conveys the same idea in a loose, paraphrased, or high-level way.
+- The wording does NOT need to match exactly.
+- Minor references, summaries, or indirect mentions still count.
+
+Rules:
+- Keep the original wording of each key point exactly as written.
+- Maintain the original order of the key points.
+- Only include key points that were covered.
+- Return ONLY a valid JSON array.
+- Do NOT include explanations, comments, or extra text.
+
+Key points:
+{key_points}
+
+Transcript:
+{transcript}
+"""
+
 
     data = {
         "model": "google/gemini-3-flash-preview",

@@ -3,6 +3,7 @@ import { useEffect, useRef, useState } from "react";
 export default function SpeechToText({ sessionEnded, setTranscript }) {
   const recognitionRef = useRef(null);
   const [fullTranscript, setFullTranscript] = useState("");
+  const [lastTranscript, setLastTranscript] = useState("");
   const hasStoppedRef = useRef(false); // 🔒 guard
 
   // Start listening immediately on mount
@@ -31,6 +32,7 @@ export default function SpeechToText({ sessionEnded, setTranscript }) {
 
       if (finalChunk) {
         setFullTranscript((prev) => prev + finalChunk);
+        setLastTranscript(finalChunk);
       }
     };
 
@@ -55,7 +57,7 @@ export default function SpeechToText({ sessionEnded, setTranscript }) {
 
   return (
     <div>
-      <p>{fullTranscript || "Listening..."}</p>
+      <p>{lastTranscript || "Listening..."}</p>
     </div>
   );
 }
