@@ -4,7 +4,7 @@
 
 body {
     margin: 0;
-    font-family: 'Montserrat';
+    font-family: "Nunito", system-ui, sans-serif;
     background: #2C6E49;
     color: #FFC9B9;
     min-height: 100vh;
@@ -16,6 +16,8 @@ body {
   border-radius: 30px;
   overflow: hidden;
   display: block;
+  /* width: 140%;
+  height: 140%; */
   position: relative;
   width: 100vh; /* or your video width */
   height: 75vh; /* or your video height */
@@ -41,11 +43,9 @@ canvas {
     position:relative;
     display:inline-block;
     max-width:90vw;
+    z-index:10;
 }
 
-.home {
-  font-size: 90px;
-}
 
 .timer-setup {
   position: absolute;
@@ -98,20 +98,15 @@ h2 {
 
 .btn {
   background-color: #FFC9B9;
+  font-family: "Lucida Console", "Courier New", monospace;
   width: auto;
   height: auto;
-  color: #4d3f36;
   font-weight: bold;
   padding: 5% 10%;
   margin: 5%;
   border-radius: 10px;
   cursor: pointer;
   transition: transform 0.5s ease-in-out;
-  border: none;
-}
-
-.btn-large {
-  font-size: 3vw;
   border: none;
 }
 
@@ -122,6 +117,11 @@ h2 {
   border: none;
 }
 
+.btn-large {
+  font-size: 3vw;
+  border: none;
+}
+
 .btn-small {
   font-size: 3vw;
   border: none;
@@ -129,6 +129,7 @@ h2 {
 
 .btn-result{
   position: fixed;
+  font-family: "Lucida Console", "Courier New", monospace;
   bottom: clamp(16px, 4vh, 32px);
   left: 50%;
   transform: translateX(-70%);
@@ -144,7 +145,7 @@ h2 {
   padding: clamp(5px, 2vw, 10px) clamp(10px, 4vw, 22px);
 
   margin: 5%;
-  border-radius: 15px;
+  border-radius: 10px;
   cursor: pointer;
   transition: transform 0.5s ease-in-out;
   border: none;
@@ -168,22 +169,32 @@ h2 {
     pointer-events: none;
 }
 
-#background {
+.background {
     position: absolute;
     left: 50%;
     bottom: 0;
     transform: translateX(-50%);
     z-index: 0;
-    pointer-events: none;
+    pointer-events: none;   
 }
 
 #home{
     text-align: left;
     left:30%;
+    display:flex;
+    align-items: center;
+    overflow: hidden;
 }
 
-#home-buttons{
-    position: absolute;
+#start{
+    display:flex;
+    flex-direction: column;
+    align-items: flex-start;
+    z-index:10;
+}
+
+#home-button{
+    position: static;
     bottom: 20%;
     z-index: 10;
 }
@@ -199,11 +210,12 @@ h2 {
 
 #name{
     font-size:10vw;
-    position:relative;
+    font-family: "Nunito", system-ui, sans-serif;
     z-index: 10;
+    margin-bottom: 2rem;
 }
 
-#timer-buttons{
+#timer-button{
     position: absolute;
     left: 41.5%;
     bottom: -40%;

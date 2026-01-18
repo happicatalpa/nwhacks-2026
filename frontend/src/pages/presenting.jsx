@@ -13,9 +13,13 @@ export default function Presenting({ setTranscript, timeLimitSeconds, currentSec
     const [sessionEnded, setSessionEnded] = useState(false);
     const videoRef = useRef(null);
 
+    function endSession() {
+        setSessionEnded(true);
+    }
 
     return (
         <>
+        <div id="presenting">
             <div>
                 <Timer start={timeLimitSeconds} currentSeconds={currentSeconds} setCurrentSeconds={setCurrentSeconds} />
                 <SpeechToText setTranscript={setTranscript} sessionEnded={sessionEnded} />
@@ -28,10 +32,14 @@ export default function Presenting({ setTranscript, timeLimitSeconds, currentSec
                 </div>
                 <div id="timer-buttons">
                     <Link to="/results">
-                        <button className="btn btn-large" onClick={() => setSessionEnded(true)}>End Session</button>
+                        <button className="btn btn-large" onClick={() => setSessionEnded(true)}>END SESSION</button>
                     </Link>
                 </div>
+                
             </div>
+            <img src="/background2.png" className="background"></img>
+            </div>
+            
 
 
         </>
