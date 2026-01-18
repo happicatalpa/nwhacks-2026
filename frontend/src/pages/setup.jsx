@@ -4,7 +4,6 @@ import { useNavigate } from "react-router-dom";
 
 export default function Setup({ setScript, setTimeLimitSeconds }) {
     const [textInput, setTextInput] = useState("lorem ipsum dolar...");
-    const [localTimer, setLocalTimer] = useState(30);
     const navigate = useNavigate();
 
     const handleNext = () => {
@@ -34,6 +33,7 @@ export default function Setup({ setScript, setTimeLimitSeconds }) {
         </div>
         <div class="setup-button">
             <button class="btn btn-large" onClick={handleNext}>Start<br /> Presentation!</button>
+            {/* <button id="small" onClick={handleNext}>Back</button> */}
         </div>
     </div>
     );

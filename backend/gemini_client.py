@@ -10,19 +10,32 @@ def request_key_points(script):
     client = genai.Client()
 
     prompt="""Take the following script and identify the key points of the script. 
-    Return a list of key points formatted as a python array in this exact format with no additional text: 
+    Return a list of key points formatted as a javascript array in this exact format with no additional text: 
     ["key point 1", "key point 2", "key point 3"]
     Here is the script: """ + script
 
     response = client.models.generate_content(
-        model="gemini-3-flash-preview", contents=prompt
+        model="gemini-2.5-flash-lite", contents=prompt
     )
     summary = response.text
     print(summary)
     return summary
 
 
-def compare_points_to_transcript(key_points, transcript)
+def compare_points_to_transcript(key_points, transcript):
+    client = genai.Client()
+
+    prompt="""Read the following transcription. Then, filter the following list of key points, 
+    keeping only the items that were covered in the transcription. 
+    Return the list in the exact same format with no additional words. Here's the list of points: """ + key_points + """\nHere
+    is the full transcript: """ + transcript
+    
+    response = client.models.generate_content(
+        model="gemini-2.5-flash-lite", contents=prompt
+    )
+    summary = response.text
+    print(summary)
+    return summary
 
 request_key_points("""Hello everyone!
 
@@ -31,27 +44,3 @@ On the other hand, the German Shepherd is famous for its intelligence and is oft
 No matter the breed, dogs bring joy, companionship, and love to our lives. So whether you prefer a big fluffy buddy or a small energetic pal, there’s a perfect dog out there for everyone!
 Thank you!""")
 
-
-
-# import requests
-
-# GEMINI_API_URL = "https://api.gemini.example.com/v1/compare"  # Replace with real URL
-# GEMINI_API_KEY = "AIzaSyAnntdkJG6odteSHKOu3V7jHUiBunnpOYU"  # Replace with your key
-
-# def request_key_points(script):
-#     payload = {
-#         "script": script,
-#     }
-
-#     headers = {
-#         "Authorization": f"Bearer {GEMINI_API_KEY}",
-#         "Content-Type": "application/json"
-#     }
-
-#     try:
-#         response = requests.post(GEMINI_API_URL, json=payload, headers=headers)
-#         response.raise_for_status()
-#         return response.json()
-#     except requests.exceptions.RequestException as e:
-#         # You can log here if you want
-#         return {"error": str(e)}

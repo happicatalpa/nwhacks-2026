@@ -1,19 +1,17 @@
-
-
 * {
-  box-sizing: border-box;
+    box-sizing: border-box;
 }
 
 body {
-  margin: 0;
-  font-family: system-ui, sans-serif;
-  background: #90BEDE;
-  color: #DFFDFF;
+    margin: 0;
+    font-family: system-ui, sans-serif;
+    background: #2C6E49;
+    color: #FFC9B9;
 }
 
 .camera {
-  border: 15px solid #DFFDFF;
-  background-color: #DFFDFF;
+  border: 15px solid #FFC9B9;
+  background-color: #FFC9B9;
   border-radius: 30px;
   overflow: hidden;
   display: inline-block;
@@ -30,7 +28,7 @@ body {
   top: 25%;
   right: 85px;
   border-radius: 15px;
-  border: 10px solid #DFFDFF;
+  border: 10px solid #FFC9B9;
   padding: 10px
 }
 
@@ -56,7 +54,7 @@ h2 {
   min-height: 68vh;
   font-size: clamp(1rem, 1.2vw, 1.1rem);
   padding: 1rem;
-  border: 0.6rem solid #DFFDFF;
+  border: 0.6rem solid #FFC9B9;
   border-radius: 15px;
   resize: none;
   box-sizing: border-box;
@@ -70,8 +68,8 @@ h2 {
 }
 
 .btn {
-  background-color: #DFFDFF;
-  color: #90BEDE;
+  background-color: #FFC9B9;
+  color: #2C6E49;
   font-weight: bold;
   padding: 10px 30px;
   margin: 5px;
@@ -93,18 +91,6 @@ h2 {
   position: relative;
   border: none;
 }
-/* 
-button#small {
-  font-size: 100%;
-  border: none;
-}  */
-
-/* button#large {
-  font-size: 3rem;
-  position: relative;
-  top: 100px; 
-  border: none;
-}  */
 
 .btn:hover {
   transform: translateY(-2px);
@@ -114,13 +100,38 @@ button#small {
 }
 
 .audience {
-  position: absolute;
-  left: 50%;
-  bottom: 0;
-  transform: translateX(-50%);
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
 
-  width: 640px;
-  z-index: 10;
-  pointer-events: none;
+    width: 640px;
+    z-index: 10;
+    pointer-events: none;
 }
 
+#timer-buttons {
+    position: relative;
+    top: 0;
+}
+
+#background {
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
+    z-index: 0;
+    pointer-events: none;
+}
+
+#home{
+    text-align: left;
+}
+
+#home-buttons{
+    position: fixed;
+    left: 30%;
+    bottom: 30%;
+    transform: translateX(-50%);
+    z-index: 10;
+}
