@@ -60,8 +60,10 @@ export default function Results({script, transcript, currentSeconds, timeLimit})
   return (
     <div>
       <div className = "resultsPage"> 
-          <h1 className="sp-title">Congradulations!<br /> Here are your results!</h1>
-          <TimeScore timeLimit={timeLimit} currentTime={currentSeconds} />
+          <h1 className="sp-title">RESULTS</h1>
+          <div className="time-score">
+            <TimeScore timeLimit={timeLimit} currentTime={currentSeconds} />
+          </div>
           {loading ? (
         <p>Loading results...</p>
       ) : (
