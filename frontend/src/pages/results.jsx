@@ -1,3 +1,6 @@
+import React from "react";
+import { Link } from "react-router-dom";
+
 import { getKeyPoints, getCheckedKeyPoints } from '../features/score/SpeechScore.jsx'
 import { useState } from 'react'
 
@@ -15,13 +18,23 @@ export default function Results({script, transcript}) {
     };
 
 
+
   return (
     <div> 
         <h1>WOOHOO you finished your cool talk</h1>
-        <p>SCORE: </p>
-        <button onClick={handleGetKeyPoints} id="small">Try Again</button>
-        <p>Key points: {keyPoints}</p>
-        <p>Covered points: {checkedKeyPoints}</p>
+        <div className = "">
+            <p>SCORE: </p>
+            <p>Key points: {keyPoints}</p>
+            <p>Covered points: {checkedKeyPoints}</p>
+        </div>
+
+        <Link to="/">
+          <button onClick={handleGetKeyPoints} id="small">Back to Start</button>
+        
+        </Link>
+        
+        <img src = "/yaptrainer.png"></img>
     </div>
+
   );
 }
