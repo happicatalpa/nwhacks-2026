@@ -112,7 +112,8 @@ h2 {
 .btn-result{
   position: fixed;
   bottom: clamp(16px, 4vh, 32px);
-  left: 37%;
+  left: 50%;
+  transform: translateX(-70%);
 
   background-color: #FFC9B9;
   color: #4d3f36;
@@ -121,11 +122,11 @@ h2 {
   height: auto;
   
   font-weight: bold;
-  font-size: clamp(1rem, 2.5vw, 1.4rem);
+  font-size: clamp(2rem, 2.5vw, 3.4rem);
   padding: clamp(5px, 2vw, 10px) clamp(10px, 4vw, 22px);
 
   margin: 5%;
-  border-radius: 10px;
+  border-radius: 15px;
   cursor: pointer;
   transition: transform 0.5s ease-in-out;
   border: none;
