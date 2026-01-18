@@ -21,9 +21,17 @@ body {
   left: center;
 }
 
-button {
+div#home {
+  font-size: 50px;
+  margin-bottom: 40px;
+}
+
+button#home {
   background-color: #DFFDFF;
   color: #90BEDE;
+  font-size: 50px;
+  position: relative;
+  top: 100px; 
   border: none;
   font-weight: bold;
   padding: 10px 30px;

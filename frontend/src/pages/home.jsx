@@ -2,10 +2,10 @@
 
 export default function Home() {
   return (
-    <div> 
-        <h1>Name of APP!!!</h1>
-        <button>START</button>
-        <button>Help</button>
+    <div id="home"> 
+        <h1>Happy Yapper</h1>
+        <button id="home">START</button>
+        <button id="home">Help</button>
     </div>
   );
 }
