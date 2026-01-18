@@ -7,13 +7,13 @@
 body {
   margin: 0;
   font-family: system-ui, sans-serif;
-  background: #90BEDE;
-  color: #DFFDFF;
+  background: #2C6E49;
+  color: #FEFEE3;
 }
 
 #camera {
-  border: 15px solid #DFFDFF;
-  background-color: #DFFDFF;
+  border: 15px solid #FFC9B9;
+  background-color: #FFC9B9;
   border-radius: 30px;
   overflow: hidden;
   display: inline-block;
@@ -30,7 +30,7 @@ div#timer-setup {
   top: 220px;
   right: 80px;
   border-radius: 15px;
-  border: 10px solid #DFFDFF;
+  border: 10px solid #FFC9B9;
   padding: 10px
 }
 
@@ -56,13 +56,13 @@ textarea {
   width: 1000px;    
   height: 500px;    
   resize: none;  
-  border: 10px solid #DFFDFF;
+  border: 10px solid #FFC9B9;
   border-radius: 15px; 
 }
 
 button {
-  background-color: #DFFDFF;
-  color: #90BEDE;
+  background-color: #FFC9B9;
+  color: #2C6E49;
   font-weight: bold;
   padding: 10px 30px;
   margin: 5px;
