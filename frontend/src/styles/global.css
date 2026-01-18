@@ -4,7 +4,7 @@
 
 body {
     margin: 0;
-    font-family: system-ui, sans-serif;
+    font-family: 'Times New Roman', Times, serif;
     background: #2C6E49;
     color: #FEFEE3;
 }
@@ -132,4 +132,13 @@ button:hover {
     position: fixed;
     bottom: 30%;
     z-index: 10;
+}
+
+#yaptrainerhome{
+    position: absolute;
+    left: 50%;
+    bottom: 5%;
+    transform: translateX(-50%);
+    z-index: 0;
+    height:90%;
 }

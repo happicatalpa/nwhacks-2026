@@ -11,6 +11,7 @@ export default function Home() {
                     <button id="large">START</button>
                 </Link>
             </div>
+            <img src = "/yaptrainerhome.png" id = "yaptrainerhome"></img>
             <img src="/background.png" id="background"></img>
         </div>
     );
