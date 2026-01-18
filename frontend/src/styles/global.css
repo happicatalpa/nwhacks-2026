@@ -146,6 +146,7 @@ h2 {
 
 #name{
     font-size:200px;
+    position:fixed;
 }
 .resultsPage{
   position: relative;
