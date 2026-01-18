@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 
-export default function Timer({ start = 60 }) {
+export default function Timer({ start = 60, setSessionEnded}) {
   const [timeLeft, setTimeLeft] = useState(start);
 
   useEffect(() => {

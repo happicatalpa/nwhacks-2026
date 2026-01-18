@@ -1,65 +1,61 @@
-import React, { useState, useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 
-export default function SpeechToText({setTranscript}) {
-  const [listening, setListening] = useState(false);
+export default function SpeechToText({ sessionEnded, setTranscript }) {
   const recognitionRef = useRef(null);
   const [fullTranscript, setFullTranscript] = useState("");
+  const hasStoppedRef = useRef(false); // 🔒 guard
 
-
+  // Start listening immediately on mount
   useEffect(() => {
-    // Check if browser supports the API
     const SpeechRecognition =
       window.SpeechRecognition || window.webkitSpeechRecognition;
 
     if (!SpeechRecognition) {
-      alert("Sorry, your browser does not support Speech Recognition.");
+      alert("Speech Recognition not supported");
       return;
     }
 
     const recognition = new SpeechRecognition();
-    recognition.lang = "en-US"; // change as needed
-    recognition.interimResults = true; // get results while speaking
-    recognition.continuous = true; // keep listening until stopped
+    recognition.lang = "en-US";
+    recognition.interimResults = true;
+    recognition.continuous = true;
 
     recognition.onresult = (event) => {
-        let finalTranscript = "";
-        for (let i = event.resultIndex; i < event.results.length; i++) {
-            if (event.results[i].isFinal) {
-            finalTranscript += event.results[i][0].transcript + " ";
-            }
-        }
+      let finalChunk = "";
 
-        if (finalTranscript) {
-            // Append new final transcript chunk to stored full transcript
-            setFullTranscript((prev) => prev + finalTranscript);         
+      for (let i = event.resultIndex; i < event.results.length; i++) {
+        if (event.results[i].isFinal) {
+          finalChunk += event.results[i][0].transcript + " ";
         }
+      }
+
+      if (finalChunk) {
+        setFullTranscript((prev) => prev + finalChunk);
+      }
     };
 
-    recognition.onerror = (event) => {
-      console.error("Speech recognition error:", event.error);
-    };
-
+    recognition.start();
     recognitionRef.current = recognition;
+
+    return () => recognition.stop();
   }, []);
 
-  const toggleListening = () => {
-    if (listening) {
-      recognitionRef.current.stop();
-      setTranscript(fullTranscript);
-     console.log("set transcript to: " + fullTranscript);
-      setListening(false);
-    } else {
-      recognitionRef.current.start();
-      setListening(true);
-    }
-  };
+  // Stop listening when session ends
+  useEffect(() => {
+    if (!sessionEnded) return;
+    if (hasStoppedRef.current) return;
+
+    hasStoppedRef.current = true;
+
+    recognitionRef.current?.stop();
+    setTranscript(fullTranscript);
+
+    console.log("Final transcript:", fullTranscript);
+  }, [sessionEnded, fullTranscript, setTranscript]);
 
   return (
     <div>
-      <button id="small" onClick={toggleListening}>
-        {listening ? "Stop Listening" : "Start Listening"}
-      </button>
-      <p>{fullTranscript || "Your speech will appear here..."}</p>
+      <p>{fullTranscript || "Listening..."}</p>
     </div>
   );
 }

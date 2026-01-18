@@ -7,6 +7,8 @@ import { useState } from 'react'
 export default function Results({script, transcript}) {
     const [keyPoints, setKeyPoints] = useState('');
     const [checkedKeyPoints, setCheckedKeyPoints] = useState('');
+    const [loading, setLoading] = useState(false);
+
     console.log("current transcript: " + transcript);
 
     const handleGetKeyPoints = async () => {
@@ -17,8 +19,34 @@ export default function Results({script, transcript}) {
         if (checkedPoints) setCheckedKeyPoints(checkedPoints);
     };
 
+    function formatResults() {
+        try {
+            const keyPointsArray = JSON.parse(keyPoints);
+            console.log(keyPointsArray);
+            const checkedKeyPointsArray = JSON.parse(checkedKeyPoints);
+            console.log(checkedKeyPointsArray);
 
+            let resultText = "Summary of Key Points Covered: \n";
 
+            keyPointsArray.forEach(point => {
+                if (checkedKeyPointsArray.includes(point)) {
+                    resultText += point + "✅\n";
+                } else {
+                    resultText += point + "❌\n";
+                }
+                
+            });
+
+            return resultText;
+            
+        } catch (e) {
+            console.error("Invalid JSON string");
+            return "Unable to parse results.";
+        }
+    }
+
+    handleGetKeyPoints();
+    
   return (
     <div> 
         <h1>WOOHOO you finished your cool talk</h1>
@@ -26,11 +54,12 @@ export default function Results({script, transcript}) {
             <p>SCORE: </p>
             <p>Key points: {keyPoints}</p>
             <p>Covered points: {checkedKeyPoints}</p>
+            <div>{formatResults()}</div>
+
         </div>
 
         <Link to="/">
-          <button onClick={handleGetKeyPoints} id="small">Back to Start</button>
-        
+          <button onClick={handleGetKeyPoints} id="small">Back to Start</button> 
         </Link>
         
         <img src = "/yaptrainer.png"></img>

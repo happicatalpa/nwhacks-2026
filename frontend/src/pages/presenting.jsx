@@ -8,21 +8,24 @@ import { Link } from "react-router-dom";
 
 export default function Presenting({ setTranscript, timeLimitSeconds }) {
   const [count, setCount] = useState(0)
+  const [sessionEnded, setSessionEnded] = useState(false);
 
+    function endSession() {
+        setSessionEnded(true);
+    }
 
   return (
     <>
-      <h1>Presentation demo!!</h1>
       <div> 
-        <Timer start={timeLimitSeconds} />
-        <SpeechToText setTranscript={setTranscript}/>
+        <Timer start={timeLimitSeconds} setSessionEnded={setSessionEnded} />
+        <SpeechToText setTranscript={setTranscript} sessionEnded={sessionEnded} />
       </div>
         <div id="camera"> 
             <Camera />
             <Audience />
         </div>
         <Link to="/results">
-            <button id = "large">End Session</button>
+            <button id = "large" onClick={() => setSessionEnded(true)}>End Session</button>
         </Link>
         
     </>
