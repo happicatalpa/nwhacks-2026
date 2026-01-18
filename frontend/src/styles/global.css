@@ -25,9 +25,6 @@ body {
     max-width:90vw;
 }
 
-.home {
-  font-size: 90px;
-}
 
 .timer-setup {
   position: absolute;
@@ -156,16 +153,26 @@ h2 {
     bottom: 0;
     transform: translateX(-50%);
     z-index: 0;
-    pointer-events: none;
+    pointer-events: none;   
 }
 
 #home{
     text-align: left;
     left:30%;
+    display:flex;
+    align-items: center;
+    overflow: hidden;
 }
 
-#home-buttons{
-    position: absolute;
+#start{
+    display:flex;
+    flex-direction: column;
+    align-items: flex-start;
+    z-index:10;
+}
+
+#home-button{
+    position: static;
     bottom: 20%;
     z-index: 10;
 }
@@ -181,11 +188,12 @@ h2 {
 
 #name{
     font-size:10vw;
-    position:relative;
+    /* position:relative; */
     z-index: 10;
+    margin-bottom: 2rem;
 }
 
-#timer-buttons{
+#timer-button{
     position: absolute;
     left: 41.5%;
     bottom: -40%;
