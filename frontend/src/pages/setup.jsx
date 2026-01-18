@@ -32,7 +32,7 @@ export default function Setup({ setScript, setTimeLimitSeconds }) {
                 setTimeLimitSeconds={setTimeLimitSeconds}
             />
         </div>
-        <button onClick={handleNext}>Start Presentation!</button>
+        <button id="large" onClick={handleNext}>Start Presentation!</button>
     </div>
     );
 }
