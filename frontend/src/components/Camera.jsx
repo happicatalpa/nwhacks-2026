@@ -1,7 +1,7 @@
 import { useEffect, useRef } from "react";
 
-export default function Camera() {
-  const videoRef = useRef(null);
+export default function Camera({ videoRef }) {
+  
 
   useEffect(() => {
     navigator.mediaDevices
@@ -9,7 +9,7 @@ export default function Camera() {
       .then(stream => {
         videoRef.current.srcObject = stream;
       });
-  }, []);
+  }, [videoRef]);
 
   return <video ref={videoRef} autoPlay playsInline />;
 }

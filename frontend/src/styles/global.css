@@ -17,6 +17,24 @@ body {
   overflow: hidden;
   display: block;
   position: relative;
+  width: 100vh; /* or your video width */
+  height: 75vh; /* or your video height */
+}
+
+video {
+    position: absolute; 
+    top: 0; 
+    left: 0; 
+    width: 100%; 
+    height: 100%;
+}
+
+canvas {
+    position: absolute; 
+    top: 0; 
+    left: 0; 
+    width: 100%; 
+    height: 100%;
 }
 
 .camera-wrapper{
@@ -145,7 +163,7 @@ h2 {
     bottom: 0;
     transform: translateX(-50%);
 
-    width: 640px;
+    width: 100%;
     z-index: 10;
     pointer-events: none;
 }
