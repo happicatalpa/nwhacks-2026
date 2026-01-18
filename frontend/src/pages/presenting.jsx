@@ -17,15 +17,17 @@ export default function Presenting({ setTranscript, timeLimitSeconds }) {
                 <Timer start={timeLimitSeconds} />
                 <SpeechToText setTranscript={setTranscript} />
             </div>
-            <div class="camera">
-                <Camera />
-                <Audience />
-            </div>
-            <div id="timer-buttons">
-                <Link to="/results">
-                    <button>End Session</button>
-                </Link>
-            </div>
+            
+                <div class="camera">
+                    <Camera />
+                    <Audience />
+                </div>
+                <div id="timer-buttons">
+                    <Link to="/results">
+                        <button class="btn btn-large">End Session</button>
+                    </Link>
+                </div>
+            
 
 
         </>
