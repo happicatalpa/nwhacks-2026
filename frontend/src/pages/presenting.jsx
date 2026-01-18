@@ -6,18 +6,15 @@ import Timer from '../components/Timer.jsx'
 import SpeechToText from '../features/speech/speech-to-text.jsx'
 import { Link } from "react-router-dom";
 
-export default function Presenting({ setTranscript, timeLimitSeconds, setCurrentSeconds }) {
+export default function Presenting({ setTranscript, timeLimitSeconds, currentSeconds, setCurrentSeconds }) {
     const [count, setCount] = useState(0)
     const [sessionEnded, setSessionEnded] = useState(false);
 
-    function endSession() {
-        setSessionEnded(true);
-    }
 
     return (
         <>
             <div>
-                <Timer start={timeLimitSeconds} setCurrentSeconds={setCurrentSeconds} />
+                <Timer start={timeLimitSeconds} currentSeconds={currentSeconds} setCurrentSeconds={setCurrentSeconds} />
                 <SpeechToText setTranscript={setTranscript} sessionEnded={sessionEnded} />
             </div>
             <div className="camera-wrapper">
