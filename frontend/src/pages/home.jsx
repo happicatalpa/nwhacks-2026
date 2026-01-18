@@ -14,7 +14,7 @@ export default function Home() {
                 </div>
             </div>
             <img src="/yaptrainerhome.png" id="yaptrainerhome"></img>
-            <img src="/background.png" id="background"></img>
+            <img src="/background.png" className="background"></img>
         </div>
     );
 }

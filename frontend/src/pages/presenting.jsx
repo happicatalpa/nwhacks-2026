@@ -16,6 +16,7 @@ export default function Presenting({ setTranscript, timeLimitSeconds, currentSec
 
     return (
         <>
+        <div id="presenting">
             <div>
                 <Timer start={timeLimitSeconds} currentSeconds={currentSeconds} setCurrentSeconds={setCurrentSeconds} />
                 <SpeechToText setTranscript={setTranscript} sessionEnded={sessionEnded} />
@@ -30,7 +31,11 @@ export default function Presenting({ setTranscript, timeLimitSeconds, currentSec
                         <button className="btn btn-large" onClick={() => setSessionEnded(true)}>END SESSION</button>
                     </Link>
                 </div>
+                
             </div>
+            <img src="/background2.png" className="background"></img>
+            </div>
+            
 
 
         </>

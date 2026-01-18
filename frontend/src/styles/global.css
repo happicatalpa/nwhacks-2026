@@ -25,6 +25,7 @@ body {
     position:relative;
     display:inline-block;
     max-width:90vw;
+    z-index:10;
 }
 
 
@@ -150,7 +151,7 @@ h2 {
     pointer-events: none;
 }
 
-#background {
+.background {
     position: absolute;
     left: 50%;
     bottom: 0;
