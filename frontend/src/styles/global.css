@@ -4,7 +4,7 @@
 
 body {
     margin: 0;
-    font-family: system-ui, sans-serif;
+    font-family: 'Times New Roman', Times, serif;
     background: #2C6E49;
     color: #FFC9B9;
 }
@@ -25,8 +25,10 @@ body {
 
 .timer-setup {
   position: absolute;
-  top: 25%;
-  right: 85px;
+  top: 23%;
+  right: 5%;
+  width: 20%;
+  height: 35%;
   border-radius: 15px;
   border: 10px solid #FFC9B9;
   padding: 10px
@@ -42,19 +44,12 @@ h2 {
   font-size: 180%;
 }
 
-/* .sp {
-  position: absolute;  
-  min-height: 70vh;
-  margin: 0 auto;             
-  padding-top: 2.5rem;         
-} */
-
 .sp-input {
   position : absolute;
   top: 23%;
   left: 4%;
   width: 65%;
-  min-height: 70vh;
+  min-height: 71vh;
   font-size: clamp(1rem, 1.2vw, 1.1rem);
   padding: 1rem;
   border: 0.6rem solid #FFC9B9;
@@ -64,9 +59,9 @@ h2 {
 }
 
 .sp-text {
-  position: relative;
-  top: -10%;
-  left: 20%;
+  position: absolute;
+  bottom: 76%;
+  left: 5%;
   font-size: clamp(1.2rem, 2.5vw, 1.8rem);
 }
 
@@ -113,9 +108,9 @@ h2 {
     pointer-events: none;
 }
 
-#timer-buttons {
-    position: relative;
-    top: 0;
+#timer-buttons{
+    position:relative;
+    top:0;
 }
 
 #background {
@@ -137,3 +132,28 @@ h2 {
     bottom: 30%;
     z-index: 10;
 }
+
+#yaptrainerhome{
+    position: absolute;
+    left: 50%;
+    bottom: 5%;
+    transform: translateX(-50%);
+    z-index: 0;
+    height:90%;
+}
+
+.resultsPage{
+  position: relative;
+  z-index: 1; 
+}
+
+#yaptrainerpos { 
+  position: fixed; 
+  bottom: 0px; 
+  right: 0px; 
+  width: clamp(900px, 16vw, 900px); 
+
+  height: auto; 
+  transform: translate(15%, 15%);
+  z-index: -1;
+  pointer-events: none; }
