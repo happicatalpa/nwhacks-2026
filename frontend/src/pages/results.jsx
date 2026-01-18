@@ -59,7 +59,7 @@ export default function Results({script, transcript}) {
   return (
     <div>
       <div className = "resultsPage"> 
-          <h1>WOOHOO you finished your cool talk</h1>
+          <h1 className="sp-title">WOOHOO you finished your cool talk</h1>
           {loading ? (
         <p>Loading results...</p>
       ) : (

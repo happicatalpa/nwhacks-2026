@@ -7,6 +7,7 @@ body {
     font-family: 'Montserrat';
     background: #2C6E49;
     color: #FFC9B9;
+    min-height: 100vh;
 }
 
 .camera {
@@ -14,9 +15,14 @@ body {
   background-color: #FFC9B9;
   border-radius: 30px;
   overflow: hidden;
-  display: inline-block;
+  display: block;
   position: relative;
-  left: center;
+}
+
+.camera-wrapper{
+    position:relative;
+    display:inline-block;
+    max-width:90vw;
 }
 
 .home {
@@ -36,12 +42,19 @@ body {
 
 .setup-button {
   position: absolute;
-  top: 67%;
-  right: 3%;
+  bottom: 6%;
+  right: 8%;
 }
 
 h2 {
   font-size: 180%;
+}
+
+.sp-title {
+  position: relative;
+  margin: 0 auto;
+  text-align: center;
+  font-size: clamp(2rem, 5vw, 5rem);
 }
 
 .sp-input {
@@ -67,10 +80,12 @@ h2 {
 
 .btn {
   background-color: #FFC9B9;
+  width: auto;
+  height: auto;
   color: #4d3f36;
   font-weight: bold;
-  padding: 10px 30px;
-  margin: 5px;
+  padding: 5% 10%;
+  margin: 5%;
   border-radius: 10px;
   cursor: pointer;
   transition: transform 0.5s ease-in-out;
@@ -78,15 +93,12 @@ h2 {
 }
 
 .btn-large {
-  font-size: 3rem;
-  position: relative;
-  top: 100px; 
+  font-size: 3vw;
   border: none;
 }
 
 .btn-small {
-  font-size: 1.5rem;
-  position: relative;
+  font-size: 3vw;
   border: none;
 }
 
@@ -108,11 +120,6 @@ h2 {
     pointer-events: none;
 }
 
-#timer-buttons{
-    position:relative;
-    top:0;
-}
-
 #background {
     position: absolute;
     left: 50%;
@@ -129,7 +136,7 @@ h2 {
 
 #home-buttons{
     position: absolute;
-    bottom: 30%;
+    bottom: 20%;
     z-index: 10;
 }
 
@@ -148,6 +155,17 @@ h2 {
     z-index: 10;
 }
 
+#timer-buttons{
+    position: absolute;
+    left: 50%;
+    bottom: -40%;
+    transform: translateX(-50%);
+    z-index:20;
+    display:flex;
+    justify-content: center;
+}
+
+
 .resultsPage{
   position: relative;
   z-index: 1; 
@@ -163,3 +181,4 @@ h2 {
   transform: translate(15%, 15%);
   z-index: -1;
   pointer-events: none; }
+

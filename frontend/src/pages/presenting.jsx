@@ -7,8 +7,8 @@ import SpeechToText from '../features/speech/speech-to-text.jsx'
 import { Link } from "react-router-dom";
 
 export default function Presenting({ setTranscript, timeLimitSeconds }) {
-  const [count, setCount] = useState(0)
-  const [sessionEnded, setSessionEnded] = useState(false);
+    const [count, setCount] = useState(0)
+    const [sessionEnded, setSessionEnded] = useState(false);
 
     function endSession() {
         setSessionEnded(true);
@@ -16,20 +16,21 @@ export default function Presenting({ setTranscript, timeLimitSeconds }) {
 
     return (
         <>
-                  <div>
+            <div>
                 <Timer start={timeLimitSeconds} setSessionEnded={setSessionEnded} />
-                <SpeechToText setTranscript={setTranscript} sessionEnded={sessionEnded}  />
+                <SpeechToText setTranscript={setTranscript} sessionEnded={sessionEnded} />
             </div>
-            <div class="camera">
-                <Camera />
-                <Audience />
+            <div className="camera-wrapper">
+                <div class="camera">
+                    <Camera />
+                    <Audience />
+                </div>
+                <div id="timer-buttons">
+                    <Link to="/results">
+                        <button className="btn btn-large" onClick={() => setSessionEnded(true)}>End Session</button>
+                    </Link>
+                </div>
             </div>
-            <div id="timer-buttons">
-                <Link to="/results">
-                    <button onClick={() => setSessionEnded(true)}>End Session</button>
-                </Link>
-            </div>
-
 
         </>
     )

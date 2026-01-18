@@ -14,7 +14,7 @@ export default function Setup({ setScript, setTimeLimitSeconds }) {
 
     return (
     <div> 
-        <h1>SETUP</h1>
+        <h1 class="sp-title">SETUP</h1>
         <div class="sp">
             <h2 class="sp sp-text">Input your script here!</h2>
             <textarea class="sp-input"
@@ -30,7 +30,7 @@ export default function Setup({ setScript, setTimeLimitSeconds }) {
             <TimerSetter
                 setTimeLimitSeconds={setTimeLimitSeconds}
             />
-        </div>
+        </div> 
         <div class="setup-button">
             <button class="btn btn-large" onClick={handleNext}>Start<br /> Presentation!</button>
         </div>
