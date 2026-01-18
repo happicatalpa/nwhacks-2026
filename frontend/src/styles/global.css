@@ -36,12 +36,19 @@ body {
 
 .setup-button {
   position: absolute;
-  top: 67%;
-  right: 3%;
+  bottom: 6%;
+  right: 8%;
 }
 
 h2 {
   font-size: 180%;
+}
+
+.sp-title {
+  position: relative;
+  margin: 0 auto;
+  text-align: center;
+  font-size: clamp(2rem, 5vw, 5rem);
 }
 
 .sp-input {
@@ -69,8 +76,8 @@ h2 {
   background-color: #FFC9B9;
   color: #4d3f36;
   font-weight: bold;
-  padding: 10px 30px;
-  margin: 5px;
+  padding: 5% 10%;
+  margin: 5%;
   border-radius: 10px;
   cursor: pointer;
   transition: transform 0.5s ease-in-out;
@@ -79,14 +86,11 @@ h2 {
 
 .btn-large {
   font-size: 3rem;
-  position: relative;
-  top: 100px; 
   border: none;
 }
 
 .btn-small {
   font-size: 1.5rem;
-  position: relative;
   border: none;
 }
 
