@@ -144,7 +144,7 @@ h2 {
 
 #name{
     font-size:10vw;
-    position:absolute;
+    position:relative;
     z-index: 10;
 }
 
