@@ -48,22 +48,25 @@ export default function Results({script, transcript}) {
     handleGetKeyPoints();
     
   return (
-    <div> 
-        <h1>WOOHOO you finished your cool talk</h1>
-        <div className = "">
-            <p>SCORE: </p>
-            <p>Key points: {keyPoints}</p>
-            <p>Covered points: {checkedKeyPoints}</p>
-            <div>{formatResults()}</div>
+    <div>
+      <div classname = "resultsPage"> 
+          <h1>WOOHOO you finished your cool talk</h1>
+          <div className = "">
+              <p>SCORE: </p>
+              <p>Key points: {keyPoints}</p>
+              <p>Covered points: {checkedKeyPoints}</p>
+              <div>{formatResults()}</div>
 
         </div>
 
         <Link to="/">
-          <button onClick={handleGetKeyPoints} id="small">Back to Start</button> 
+          <button onClick={handleGetKeyPoints} class="btn btn-small">Back to Start</button>
+        
         </Link>
         
-        <img src = "/yaptrainer.png"></img>
+        
     </div>
-
+      <img id="yaptrainerpos" src = "/yaptrainer.png"></img>
+    </div>
   );
 }
