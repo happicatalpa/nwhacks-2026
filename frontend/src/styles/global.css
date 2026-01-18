@@ -50,4 +50,14 @@ button:hover {
   transform: scale(1.05);
 }
 
+.audience {
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  transform: translateX(-50%);
+
+  width: 640px;
+  z-index: 10;
+  pointer-events: none;
+}
 
