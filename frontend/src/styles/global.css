@@ -16,6 +16,8 @@ body {
   border-radius: 30px;
   overflow: hidden;
   display: block;
+  /* width: 140%;
+  height: 140%; */
   position: relative;
 }
 
@@ -80,20 +82,15 @@ h2 {
 
 .btn {
   background-color: #FFC9B9;
+  color: #4d3f36;
   width: auto;
   height: auto;
-  color: #4d3f36;
   font-weight: bold;
   padding: 5% 10%;
   margin: 5%;
   border-radius: 10px;
   cursor: pointer;
   transition: transform 0.5s ease-in-out;
-  border: none;
-}
-
-.btn-large {
-  font-size: 3vw;
   border: none;
 }
 
@@ -104,15 +101,20 @@ h2 {
   border: none;
 }
 
+.btn-large {
+  font-size: 3vw;
+  border: none;
+}
+
 .btn-small {
   font-size: 3vw;
   border: none;
 }
 
 .btn-result{
-  position: fixed;
-  bottom: clamp(16px, 4vh, 32px);
-  left: 37%;
+  position: absolute;
+  bottom: 2%;
+  box-align: center;
 
   background-color: #FFC9B9;
   color: #4d3f36;

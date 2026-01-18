@@ -58,26 +58,22 @@ export default function Results({script, transcript}) {
     
   return (
     <div>
-      <div className = "resultsPage"> 
-          <h1 className="sp-title">WOOHOO you finished your cool talk</h1>
-          {loading ? (
-        <p>Loading results...</p>
-      ) : (
-        <>
-          <p>SCORE:</p>
-          <div style={{ whiteSpace: "pre-wrap", fontFamily: "monospace" }}>
-            {formatResults()}
-          </div>
-        </>
-      )}
-
+      <div> 
+        <h1 className="sp-title">Congratulations!<br /> Here are your results!</h1>
+        {loading ? (
+          <p>Loading results...</p>
+        ) : (
+          <>
+            <h1>SCORE:</h1>
+            <div style={{ whiteSpace: "pre-wrap", fontFamily: "monospace" }}>
+              {formatResults()}
+            </div>
+          </>
+        )}
         <Link to="/">
-          <button className="btn-result">BACK TO START</button>
-        
+          <button className="btn">BACK TO START</button>
         </Link>
-        
-        
-    </div>
+      </div>
       <img id="yaptrainerpos" src = "/yaptrainer.png"></img>
     </div>
   );
