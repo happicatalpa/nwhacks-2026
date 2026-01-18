@@ -154,6 +154,7 @@ h2 {
     left: 50%;
     bottom: 15%;
     transform: translateX(-50%);
+    z-index:20;
 }
 
 
