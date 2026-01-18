@@ -37,22 +37,34 @@ export default function Results({script, transcript, currentSeconds, timeLimit})
             const checkedKeyPointsArray = JSON.parse(checkedKeyPoints);
             console.log(checkedKeyPointsArray);
 
-            let resultText = "Summary of Key Points Covered: \n\n";
 
-            keyPointsArray.forEach(point => {
-                if (checkedKeyPointsArray.includes(point)) {
-                    resultText += point + "✅\n";
-                } else {
-                    resultText += point + "❌\n";
-                }
+            // keyPointsArray.forEach(point => {
+            //     if (checkedKeyPointsArray.includes(point)) {
+            //         resultText += point + "✅\n";
+            //     } else {
+            //         resultText += point + "❌\n";
+            //     }
                 
-            });
+            // });
 
-            return resultText;
+            // return resultText;
+
+            return (<div>
+                {keyPointsArray.map((point, index) => {
+                const isCovered = checkedKeyPointsArray.includes(point);
+                return (
+                    <div className="resultsContainer glide-up">
+                    <p key={index} className="" style={{ color: isCovered ? "green" : "red" }}>
+                    {point} {isCovered ? "✅" : "❌"}
+                    </p>
+                    </div>
+                );
+                })}
+            </div>)
             
         } catch (e) {
             console.error("Invalid JSON string");
-            return "Unable to parse results.";
+            return <div className="resultsContainer glide-up"><p className="dark">No results: Either the script entered was insufficient or no speech was recorded.</p></div>;
         }
     }
 
@@ -61,19 +73,20 @@ export default function Results({script, transcript, currentSeconds, timeLimit})
     <div>
       <div className = "resultsPage"> 
           <h1 className="sp-title">RESULTS</h1>
-          <div className="time-score">
-            <TimeScore timeLimit={timeLimit} currentTime={currentSeconds} />
-          </div>
-          {loading ? (
-        <p>Loading results...</p>
-      ) : (
-        <>
-          <h1>SCORE:</h1>
-          <div className="results" style={{ whiteSpace: "pre-wrap", fontFamily: "monospace" }}>
-            {formatResults()}
-          </div>
-        </>
-      )}
+          
+            <div className="time-score">
+                <TimeScore timeLimit={timeLimit} currentTime={currentSeconds} />
+            </div>
+            {loading ? (
+            <div className="resultsContainer"><p>Loading results...</p></div>
+        ) : (
+            <>
+            <div className="results">
+                {formatResults()}
+            </div>
+            </>
+        )}
+      
 
         <Link to="/">
           <button className="btn-result">BACK TO START</button>

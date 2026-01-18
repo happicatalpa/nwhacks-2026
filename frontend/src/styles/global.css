@@ -79,6 +79,10 @@ canvas {
   font-size: 80px;
 }
 
+p.dark {
+    color: #4d3f36;
+}
+
 .sp-input {
   position : absolute;
   top: 23%;
@@ -175,13 +179,8 @@ canvas {
 
 .results {
   position: relative;
-  left: 25%;
-  top: 10%;
-  border: 10px solid #FFC9B9;
-  border-radius: 10px;
+  margin: auto;
   padding: 10px;
-  width: 50%;
-  height: 320px;
   font-size: 150%;
   text-align: left;
 }
@@ -244,6 +243,13 @@ canvas {
     padding:2em;
 }
 
+.resultsContainer {
+    background-color: #FEFEE3;
+    border-radius:40px;
+    z-index: -2;
+    padding: 10px;
+    margin: 5px;
+}
 
 .resultsPage{
   position: relative;
@@ -269,4 +275,19 @@ canvas {
 
 .speech{
     font-size:25px;
+}
+
+@keyframes glideUp {
+  from {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.glide-up {
+  animation: glideUp 1s ease forwards;
 }
