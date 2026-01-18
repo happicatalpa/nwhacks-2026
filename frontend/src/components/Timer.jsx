@@ -25,7 +25,7 @@ export default function Timer({ start = 60 }) {
 
     return (
         <div>
-            <h2>Time Left: {formatTime(timeLeft)}</h2>
+            <h2 className="sp-title">Time Left: {formatTime(timeLeft)}</h2>
         </div>
 
     );
