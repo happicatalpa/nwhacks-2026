@@ -135,6 +135,29 @@ p.dark {
   border: none;
 }
 
+
+.btn-result {
+    position:relative;
+    margin: auto;
+    bottom: clamp(16px, 4vh, 32px);
+    font-family: "Lucida Console", "Courier New", monospace;
+    background-color: #FFC9B9;
+  color: #4d3f36;
+  width: auto;
+  height: auto;
+  font-weight: bold;
+  font-size: clamp(2rem, 2.5vw, 3.4rem);
+  padding: clamp(5px, 2vw, 10px) clamp(10px, 4vw, 22px);
+  margin: 5%;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: transform 0.5s ease-in-out;
+  border: none;
+  text-decoration: none;
+    
+
+} 
+/*
 .btn-result{
   position: fixed;
   font-family: "Lucida Console", "Courier New", monospace;
@@ -157,8 +180,8 @@ p.dark {
   cursor: pointer;
   transition: transform 0.5s ease-in-out;
   border: none;
-}
-
+} 
+*/
 .btn:hover {
   transform: translateY(-2px);
   transform: scale(1.05);
@@ -274,8 +297,8 @@ p.dark {
 
 #yaptrainerpos { 
   position: absolute; 
-  bottom: -50%; 
-  right: -10%; 
+  bottom: 25%; 
+  right: -25%; 
   width: clamp(70%, 80%, 100%); 
 
   height: auto; 

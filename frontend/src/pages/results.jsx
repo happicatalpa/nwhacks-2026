@@ -121,9 +121,9 @@ export default function Results({script, transcript, currentSeconds, timeLimit})
         )}
       
 
-        <Link to="/">
-          <button className="btn-result" onClick={handleNext}>BACK TO START</button>
-        </Link>
+        
+          <div> <button className="btn-result" onClick={handleNext}>BACK TO START</button></div>
+        
       </div>
       <img id="yaptrainerpos" src = "/yaptrainer.png"></img>
       <img className="background" src="background2.png"></img>
