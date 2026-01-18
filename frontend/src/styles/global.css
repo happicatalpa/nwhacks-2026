@@ -28,10 +28,16 @@ div#home {
 div#timer-setup {
   position: absolute;
   top: 220px;
-  right: 80px;
+  right: 85px;
   border-radius: 15px;
   border: 10px solid #FFC9B9;
   padding: 10px
+}
+
+div#setup-button {
+  position: absolute;
+  bottom: 145px;
+  right: 30px;
 }
 
 h1#setup {
@@ -49,12 +55,16 @@ h2#setup-text {
   left: 60px;
 }
 
+h2 {
+  font-size: 35px;
+}
+
 textarea {
   position: absolute;
   top: 220px;
   left: 50px;
   width: 1000px;    
-  height: 500px;    
+  height: 600px;    
   resize: none;  
   border: 10px solid #FFC9B9;
   border-radius: 15px; 
