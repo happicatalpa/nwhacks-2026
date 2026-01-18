@@ -130,7 +130,7 @@ h2 {
 #home-buttons{
     position: absolute;
     bottom: 30%;
-    z-index: 10;
+    /* z-index: 10; */
 }
 
 #yaptrainerhome{
