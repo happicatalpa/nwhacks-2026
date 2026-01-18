@@ -24,7 +24,7 @@ export default function Presenting({ setTranscript, timeLimitSeconds, currentSec
                 </div>
                 <div id="timer-buttons">
                     <Link to="/results">
-                        <button className="btn btn-large" onClick={() => setSessionEnded(true)}>End Session</button>
+                        <button className="btn btn-large" onClick={() => setSessionEnded(true)}>END SESSION</button>
                     </Link>
                 </div>
             </div>
