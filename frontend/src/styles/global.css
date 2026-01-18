@@ -114,11 +114,6 @@ h2 {
     pointer-events: none;
 }
 
-#timer-buttons{
-    position:relative;
-    top:0;
-}
-
 #background {
     position: absolute;
     left: 50%;
@@ -135,7 +130,7 @@ h2 {
 
 #home-buttons{
     position: absolute;
-    bottom: 30%;
+    bottom: 20%;
     z-index: 10;
 }
 
@@ -154,6 +149,14 @@ h2 {
     z-index: 10;
 }
 
+#timer-buttons{
+    position: absolute;
+    left: 50%;
+    bottom: 15%;
+    transform: translateX(-50%);
+}
+
+
 .resultsPage{
   position: relative;
   z-index: 1; 
@@ -169,3 +172,4 @@ h2 {
   transform: translate(15%, 15%);
   z-index: -1;
   pointer-events: none; }
+
