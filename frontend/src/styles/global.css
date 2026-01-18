@@ -4,7 +4,7 @@
 
 body {
     margin: 0;
-    font-family: system-ui, sans-serif;
+    font-family: 'Times New Roman', Times, serif;
     background: #2C6E49;
     color: #FFC9B9;
 }
@@ -133,6 +133,15 @@ h2 {
     position: fixed;
     bottom: 30%;
     z-index: 10;
+}
+
+#yaptrainerhome{
+    position: absolute;
+    left: 50%;
+    bottom: 5%;
+    transform: translateX(-50%);
+    z-index: 0;
+    height:90%;
 }
 
 .resultsPage{
