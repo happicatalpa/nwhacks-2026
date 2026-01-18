@@ -25,8 +25,10 @@ body {
 
 .timer-setup {
   position: absolute;
-  top: 25%;
-  right: 85px;
+  top: 23%;
+  right: 5%;
+  width: 20%;
+  height: 35%;
   border-radius: 15px;
   border: 10px solid #FFC9B9;
   padding: 10px
@@ -42,16 +44,12 @@ h2 {
   font-size: 180%;
 }
 
-.sp {
-  position: absolute;  
-  min-height: 70vh;
-  margin: 0 auto;             
-  padding-top: 2.5rem;         
-}
-
 .sp-input {
-  width: 50%;
-  min-height: 68vh;
+  position : absolute;
+  top: 23%;
+  left: 4%;
+  width: 65%;
+  min-height: 71vh;
   font-size: clamp(1rem, 1.2vw, 1.1rem);
   padding: 1rem;
   border: 0.6rem solid #FFC9B9;
@@ -61,9 +59,9 @@ h2 {
 }
 
 .sp-text {
-  position: relative;
-  top: -10%;
-  left: 20%;
+  position: absolute;
+  bottom: 76%;
+  left: 5%;
   font-size: clamp(1.2rem, 2.5vw, 1.8rem);
 }
 

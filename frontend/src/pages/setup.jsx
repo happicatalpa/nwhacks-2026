@@ -17,7 +17,7 @@ export default function Setup({ setScript, setTimeLimitSeconds }) {
         <h1>SETUP</h1>
         <div class="sp">
             <h2 class="sp sp-text">Input your script here!</h2>
-            <textarea class="sp sp-input"
+            <textarea class="sp-input"
                 rows="10" 
                 cols="50" 
                 defaultValue={textInput} 
@@ -33,7 +33,6 @@ export default function Setup({ setScript, setTimeLimitSeconds }) {
         </div>
         <div class="setup-button">
             <button class="btn btn-large" onClick={handleNext}>Start<br /> Presentation!</button>
-            {/* <button id="small" onClick={handleNext}>Back</button> */}
         </div>
     </div>
     );
