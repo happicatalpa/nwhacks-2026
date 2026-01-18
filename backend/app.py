@@ -28,8 +28,8 @@ def get_key_points():
 @app.route("/compare-scripts", methods=["POST"])
 def compare_scripts():
     data = request.get_json()
-    transcript = data.get("transcript", "")
-    key_points = data.get("keyPoints", "")
+    transcript = data.get("transcript")
+    key_points = data.get("keyPoints")
 
     if not transcript or not key_points:
         return jsonify({"error": "Missing key points or transcription"}), 400

@@ -9,7 +9,8 @@ export default function Results({script, transcript}) {
     const handleGetKeyPoints = async () => {
         const points = await getKeyPoints({ initialScript: script });
         if (points) setKeyPoints(points);
-        const checkedPoints = await getCheckedKeyPoints( { keyPoints: keyPoints, transcript: transcript } );
+        const checkedPoints = await getCheckedKeyPoints( { keyPoints: points, transcript: transcript } );
+        console.log("ran check points: ", checkedPoints);
         if (checkedPoints) setCheckedKeyPoints(checkedPoints);
     };
 

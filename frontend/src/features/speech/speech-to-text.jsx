@@ -31,8 +31,7 @@ export default function SpeechToText({setTranscript}) {
 
         if (finalTranscript) {
             // Append new final transcript chunk to stored full transcript
-            setFullTranscript((prev) => prev + finalTranscript);
-            setTranscript(fullTranscript);
+            setFullTranscript((prev) => prev + finalTranscript);         
         }
     };
 
@@ -46,6 +45,8 @@ export default function SpeechToText({setTranscript}) {
   const toggleListening = () => {
     if (listening) {
       recognitionRef.current.stop();
+      setTranscript(fullTranscript);
+     console.log("set transcript to: " + fullTranscript);
       setListening(false);
     } else {
       recognitionRef.current.start();

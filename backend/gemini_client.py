@@ -15,7 +15,7 @@ def request_key_points(script):
     Here is the script: """ + script
 
     response = client.models.generate_content(
-        model="gemini-2.5-flash", contents=prompt
+        model="gemini-2.5-flash-lite", contents=prompt
     )
     summary = response.text
     print(summary)
@@ -25,10 +25,13 @@ def request_key_points(script):
 def compare_points_to_transcript(key_points, transcript):
     client = genai.Client()
 
-    prompt="""Read the following transcription. Now, filter the following list of key points, keeping only the items that were covered in the transcription. Return the list in the exact same format with no additional words."""
-
+    prompt="""Read the following transcription. Then, filter the following list of key points, 
+    keeping only the items that were covered in the transcription. 
+    Return the list in the exact same format with no additional words. Here's the list of points: """ + key_points + """\nHere
+    is the full transcript: """ + transcript
+    
     response = client.models.generate_content(
-        model="gemini-2.5-flash", contents=prompt
+        model="gemini-2.5-flash-lite", contents=prompt
     )
     summary = response.text
     print(summary)
