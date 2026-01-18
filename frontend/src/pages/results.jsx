@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 import { getKeyPoints, getCheckedKeyPoints } from '../features/score/SpeechScore.jsx'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 
 export default function Results({script, transcript}) {
     const [keyPoints, setKeyPoints] = useState('');
@@ -11,13 +11,23 @@ export default function Results({script, transcript}) {
 
     console.log("current transcript: " + transcript);
 
-    const handleGetKeyPoints = async () => {
-        const points = await getKeyPoints({ initialScript: script });
-        if (points) setKeyPoints(points);
-        const checkedPoints = await getCheckedKeyPoints( { keyPoints: points, transcript: transcript } );
-        console.log("ran check points: ", checkedPoints);
-        if (checkedPoints) setCheckedKeyPoints(checkedPoints);
-    };
+     useEffect(() => {
+        async function fetchKeyPoints() {
+            if (!script || !transcript) return;
+                setLoading(true);
+            try {
+                const points = await getKeyPoints({ initialScript: script });
+                if (points) setKeyPoints(points);
+
+                const checkedPoints = await getCheckedKeyPoints({ keyPoints: points, transcript: transcript });
+                if (checkedPoints) setCheckedKeyPoints(checkedPoints);
+            } catch (error) {
+                console.error("Error fetching key points:", error);
+            }
+            setLoading(false);
+        }
+        fetchKeyPoints();
+    }, [script, transcript]);
 
     function formatResults() {
         try {
@@ -26,7 +36,7 @@ export default function Results({script, transcript}) {
             const checkedKeyPointsArray = JSON.parse(checkedKeyPoints);
             console.log(checkedKeyPointsArray);
 
-            let resultText = "Summary of Key Points Covered: \n";
+            let resultText = "Summary of Key Points Covered: \n\n";
 
             keyPointsArray.forEach(point => {
                 if (checkedKeyPointsArray.includes(point)) {
@@ -45,22 +55,24 @@ export default function Results({script, transcript}) {
         }
     }
 
-    handleGetKeyPoints();
     
   return (
     <div>
-      <div classname = "resultsPage"> 
+      <div className = "resultsPage"> 
           <h1>WOOHOO you finished your cool talk</h1>
-          <div className = "">
-              <p>SCORE: </p>
-              <p>Key points: {keyPoints}</p>
-              <p>Covered points: {checkedKeyPoints}</p>
-              <div>{formatResults()}</div>
-
-        </div>
+          {loading ? (
+        <p>Loading results...</p>
+      ) : (
+        <>
+          <p>SCORE:</p>
+          <div style={{ whiteSpace: "pre-wrap", fontFamily: "monospace" }}>
+            {formatResults()}
+          </div>
+        </>
+      )}
 
         <Link to="/">
-          <button onClick={handleGetKeyPoints} class="btn btn-small">Back to Start</button>
+          <button className="btn btn-small">Back to Start</button>
         
         </Link>
         
