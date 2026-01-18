@@ -4,7 +4,7 @@
 
 body {
     margin: 0;
-    font-family: 'Times New Roman', Times, serif;
+    font-family: 'Montserrat';
     background: #2C6E49;
     color: #FFC9B9;
 }
@@ -67,7 +67,7 @@ h2 {
 
 .btn {
   background-color: #FFC9B9;
-  color: #2C6E49;
+  color: #4d3f36;
   font-weight: bold;
   padding: 10px 30px;
   margin: 5px;
@@ -128,7 +128,7 @@ h2 {
 }
 
 #home-buttons{
-    position: fixed;
+    position: absolute;
     bottom: 30%;
     z-index: 10;
 }
@@ -143,9 +143,11 @@ h2 {
 }
 
 #name{
-    font-size:200px;
-    position:fixed;
+    font-size:10vw;
+    position:relative;
+    z-index: 10;
 }
+
 .resultsPage{
   position: relative;
   z-index: 1; 
