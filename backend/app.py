@@ -9,12 +9,12 @@ def home():
 
 @app.route("/get-key-points", methods=["POST"])
 def get_key_points():
-    data = request.get_json
+    data = request.get_json()
     script = data.get('script')
     if not script:
         return jsonify({"error": "Missing script"}), 400
 
-    result = request_key_points(script, transcript)
+    result = request_key_points(script)
 
     # If error happened inside send_to_gemini
     if "error" in result:
