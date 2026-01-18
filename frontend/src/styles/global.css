@@ -185,6 +185,12 @@ p.dark {
   text-align: left;
 }
 
+.star-container {
+    display: flex;
+  gap: 4px; /* Optional: space between stars */
+  align-items: center; /* vertically center if needed */
+}
+
 .background {
     position: fixed;
     left: 50%;
