@@ -4,7 +4,6 @@ import { useNavigate } from "react-router-dom";
 
 export default function Setup({ setScript, setTimeLimitSeconds }) {
     const [textInput, setTextInput] = useState("lorem ipsum dolar...");
-    const [localTimer, setLocalTimer] = useState(30);
     const navigate = useNavigate();
 
     const handleNext = () => {
