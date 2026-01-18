@@ -110,9 +110,9 @@ h2 {
     pointer-events: none;
 }
 
-#timer-buttons {
-    position: relative;
-    top: 0;
+#timer-buttons{
+    position:relative;
+    top:0;
 }
 
 #background {
@@ -147,3 +147,18 @@ h2 {
 #name{
     font-size:100px;
 }
+.resultsPage{
+  position: relative;
+  z-index: 1; 
+}
+
+#yaptrainerpos { 
+  position: fixed; 
+  bottom: 0px; 
+  right: 0px; 
+  width: clamp(900px, 16vw, 900px); 
+
+  height: auto; 
+  transform: translate(15%, 15%);
+  z-index: -1;
+  pointer-events: none; }
