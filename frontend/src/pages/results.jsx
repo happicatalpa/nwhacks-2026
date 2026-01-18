@@ -42,6 +42,20 @@ export default function Results({script, transcript, currentSeconds, timeLimit})
         fetchKeyPoints();
     }, [script, transcript]);
 
+    useEffect(() => {
+  try {
+    if (!keyPoints || !checkedKeyPoints) return;
+
+    const keyPointsArray = JSON.parse(keyPoints);
+    const checkedKeyPointsArray = JSON.parse(checkedKeyPoints);
+
+    const textScore = (checkedKeyPointsArray.length / keyPointsArray.length) * 4;
+    setFinalTextScore(textScore);
+  } catch (e) {
+    console.error("Invalid JSON string", e);
+  }
+}, [keyPoints, checkedKeyPoints]);
+
     function formatResults() {
         try {
             const keyPointsArray = JSON.parse(keyPoints);
@@ -49,9 +63,6 @@ export default function Results({script, transcript, currentSeconds, timeLimit})
             const checkedKeyPointsArray = JSON.parse(checkedKeyPoints);
             console.log(checkedKeyPointsArray);
 
-            const textScore = checkedKeyPointsArray.length / keyPointsArray.length * 4
-
-            setFinalTextScore(textScore);
 
             return (<div>
                 {keyPointsArray.map((point, index) => {
@@ -78,6 +89,7 @@ export default function Results({script, transcript, currentSeconds, timeLimit})
             {[...Array(5)].map((_, i) => (
                 <img 
                 key={i} 
+                className="star glide-up"
                 src={i < totalScoreOutOf5 ? "/starfilled.png" : "/starempty.png"}
                 alt={i < totalScoreOutOf5 ? "filled star" : "empty star"}
                 />
@@ -96,12 +108,12 @@ export default function Results({script, transcript, currentSeconds, timeLimit})
             <div className="time-score">
                 <TimeScore timeLimit={timeLimit} currentTime={currentSeconds} setScore={setFinalTimeScore} />
             </div>
-            <div>Score: {Math.round(finalTextScore+finalTimeScore)}</div>
-            <div>{generateStars(finalTextScore+finalTimeScore)};</div>
+            
             {loading ? (
             <div className="resultsContainer"><p>Loading results...</p></div>
         ) : (
             <>
+            <div>{generateStars(Math.round(finalTextScore+finalTimeScore))}</div>
             <div className="results">
                 {formatResults()}
             </div>
