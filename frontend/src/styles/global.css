@@ -244,13 +244,13 @@ h2 {
 
 #yaptrainerpos { 
   position: fixed; 
+  z-index: 10;
   bottom: 0px; 
   right: 0px; 
-  width: clamp(900px, 16vw, 900px); 
+  width: clamp(70%, 80%, 100%); 
 
   height: auto; 
-  transform: translate(15%, 15%);
-  z-index: -1;
+  transform: translate(35%, 25%);
   pointer-events: none; }
 
 .speech{

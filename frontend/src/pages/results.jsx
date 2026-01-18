@@ -78,6 +78,7 @@ export default function Results({script, transcript, currentSeconds, timeLimit})
         </Link>
       </div>
       <img id="yaptrainerpos" src = "/yaptrainer.png"></img>
+      <img className="background" src="background2.png"></img>
     </div>
   );
 }
