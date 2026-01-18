@@ -74,7 +74,7 @@ export default function Results({script, transcript, currentSeconds, timeLimit})
       )}
 
         <Link to="/">
-          <button className="btn">BACK TO START</button>
+          <button className="btn-result">BACK TO START</button>
         </Link>
       </div>
       <img id="yaptrainerpos" src = "/yaptrainer.png"></img>
