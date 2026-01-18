@@ -257,12 +257,14 @@ canvas {
 
 #yaptrainerpos { 
   position: absolute; 
+  z-index: 10;
   bottom: -7%; 
   right: -10%; 
-  width: clamp(900px, 16vw, 900px); 
+  width: clamp(70%, 80%, 100%); 
 
   height: auto; 
-  z-index: 10;
+  transform: translate(15%, 15%);
+  z-index: -1;
   pointer-events: none; }
 
 .speech{
