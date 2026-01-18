@@ -28,7 +28,7 @@ export default function Presenting({ setTranscript, timeLimitSeconds, currentSec
                 <div className="camera">
                     <Camera videoRef={videoRef} />
                     <MediaPipeProcessor videoRef={videoRef} />
-                    <Audience />
+                    <Audience currentTime={currentSeconds} timeLimit={timeLimitSeconds}/>
                 </div>
                 <div id="timer-buttons">
                     <Link to="/results">
