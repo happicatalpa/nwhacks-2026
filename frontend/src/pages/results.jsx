@@ -3,7 +3,7 @@ export default function Results() {
     <div> 
         <h1>WOOHOO you finished your cool talk</h1>
         <p>SCORE: </p>
-        <button>Try Again</button>
+        <button id="small">Try Again</button>
     </div>
   );
 }

@@ -55,7 +55,7 @@ export default function SpeechToText({setTranscript}) {
 
   return (
     <div>
-      <button onClick={toggleListening}>
+      <button id="small" onClick={toggleListening}>
         {listening ? "Stop Listening" : "Start Listening"}
       </button>
       <p>{fullTranscript || "Your speech will appear here..."}</p>
