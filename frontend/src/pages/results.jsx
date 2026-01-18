@@ -72,7 +72,7 @@ export default function Results({script, transcript}) {
       )}
 
         <Link to="/">
-          <button className="btn btn-small">Back to Start</button>
+          <button className="btn-result">BACK TO START</button>
         
         </Link>
         

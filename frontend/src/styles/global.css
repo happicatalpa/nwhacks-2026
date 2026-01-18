@@ -96,6 +96,28 @@ h2 {
   border: none;
 }
 
+.btn-result{
+  position: fixed;
+  bottom: clamp(16px, 4vh, 32px);
+  left: 37%;
+
+  background-color: #FFC9B9;
+  color: #4d3f36;
+
+  width: auto;
+  height: auto;
+  
+  font-weight: bold;
+  font-size: clamp(1rem, 2.5vw, 1.4rem);
+  padding: clamp(5px, 2vw, 10px) clamp(10px, 4vw, 22px);
+
+  margin: 5%;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: transform 0.5s ease-in-out;
+  border: none;
+}
+
 .btn:hover {
   transform: translateY(-2px);
   transform: scale(1.05);
