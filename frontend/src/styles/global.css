@@ -8,6 +8,7 @@ body {
     background: #2C6E49;
     color: #FFC9B9;
     min-height: 100vh;
+    overflow-y: hidden;
 }
 
 .camera {
@@ -226,3 +227,6 @@ h2 {
   z-index: -1;
   pointer-events: none; }
 
+.speech{
+    font-size:30px;
+}
