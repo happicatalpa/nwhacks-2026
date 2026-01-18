@@ -20,6 +20,7 @@ export default function Presenting({ setTranscript, timeLimitSeconds }) {
             <Camera />
             <Audience />
         </div>
+        
     </>
   )
 }
