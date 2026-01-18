@@ -113,7 +113,7 @@ h2 {
   position: fixed;
   bottom: clamp(16px, 4vh, 32px);
   left: 50%;
-  transform: translateX(-65%);
+  transform: translateX(-70%);
 
   background-color: #FFC9B9;
   color: #4d3f36;
