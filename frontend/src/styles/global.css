@@ -4,7 +4,7 @@
 
 body {
     margin: 0;
-    font-family: 'Times New Roman', Times, serif;
+    font-family: 'Montserrat';
     background: #2C6E49;
     color: #FFC9B9;
 }
@@ -67,7 +67,7 @@ h2 {
 
 .btn {
   background-color: #FFC9B9;
-  color: #2C6E49;
+  color: #4d3f36;
   font-weight: bold;
   padding: 5% 10%;
   margin: 5%;
@@ -125,9 +125,9 @@ h2 {
 }
 
 #home-buttons{
-    position: fixed;
+    position: absolute;
     bottom: 30%;
-    z-index: 10;
+    /* z-index: 10; */
 }
 
 #yaptrainerhome{
@@ -141,7 +141,7 @@ h2 {
 
 #name{
     font-size:200px;
-    position:fixed;
+    position:absolute;
 }
 .resultsPage{
   position: relative;
