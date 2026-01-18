@@ -1,12 +1,11 @@
 import { useState, useEffect } from "react";
 
-export default function Timer({ start = 60, setCurrentSeconds }) {
+export default function Timer({ start = 60, currentSeconds, setCurrentSeconds }) {
     const [timeLeft, setTimeLeft] = useState(start);
     const [isOvertime, setIsOvertime] = useState(false);
     const [textColor, setTextColor] = useState("white");
 
     useEffect(() => {
-        setCurrentSeconds((t) => t - 1);
         if (timeLeft <= 0) {
             setIsOvertime(true);
             return;
@@ -18,6 +17,15 @@ export default function Timer({ start = 60, setCurrentSeconds }) {
 
         return () => clearInterval(intervalId);
     }, [timeLeft]);
+
+    useEffect(() => {
+
+        const intervalId = setInterval(() => {
+            setCurrentSeconds((t) => t + 1);
+        }, 1000);
+
+        return () => clearInterval(intervalId);
+    }, [currentSeconds]);
 
     // Format timeLeft seconds into MM:SS
     const formatTime = (seconds) => {

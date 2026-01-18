@@ -3,8 +3,9 @@ import { Link } from "react-router-dom";
 
 import { getKeyPoints, getCheckedKeyPoints } from '../features/score/SpeechScore.jsx'
 import { useEffect, useState } from 'react'
+import TimeScore from "../features/score/TimeScore.jsx";
 
-export default function Results({script, transcript}) {
+export default function Results({script, transcript, currentSeconds, timeLimit}) {
     const [keyPoints, setKeyPoints] = useState('');
     const [checkedKeyPoints, setCheckedKeyPoints] = useState('');
     const [loading, setLoading] = useState(false);
@@ -59,7 +60,8 @@ export default function Results({script, transcript}) {
   return (
     <div>
       <div className = "resultsPage"> 
-          <h1 className="sp-title">WOOHOO you finished your cool talk</h1>
+          <h1 className="sp-title">YAY speech finished!</h1>
+          <TimeScore timeLimit={timeLimit} currentTime={currentSeconds} />
           {loading ? (
         <p>Loading results...</p>
       ) : (
@@ -72,12 +74,9 @@ export default function Results({script, transcript}) {
       )}
 
         <Link to="/">
-          <button className="btn-result">BACK TO START</button>
-        
+          <button className="btn">BACK TO START</button>
         </Link>
-        
-        
-    </div>
+      </div>
       <img id="yaptrainerpos" src = "/yaptrainer.png"></img>
     </div>
   );

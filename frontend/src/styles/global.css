@@ -4,7 +4,7 @@
 
 body {
     margin: 0;
-    font-family: 'Montserrat';
+    font-family: "Nunito", system-ui, sans-serif;
     background: #2C6E49;
     color: #FFC9B9;
     min-height: 100vh;
@@ -16,6 +16,8 @@ body {
   border-radius: 30px;
   overflow: hidden;
   display: block;
+  /* width: 140%;
+  height: 140%; */
   position: relative;
 }
 
@@ -77,20 +79,15 @@ h2 {
 
 .btn {
   background-color: #FFC9B9;
+  font-family: "Lucida Console", "Courier New", monospace;
   width: auto;
   height: auto;
-  color: #4d3f36;
   font-weight: bold;
   padding: 5% 10%;
   margin: 5%;
   border-radius: 10px;
   cursor: pointer;
   transition: transform 0.5s ease-in-out;
-  border: none;
-}
-
-.btn-large {
-  font-size: 3vw;
   border: none;
 }
 
@@ -101,6 +98,11 @@ h2 {
   border: none;
 }
 
+.btn-large {
+  font-size: 3vw;
+  border: none;
+}
+
 .btn-small {
   font-size: 3vw;
   border: none;
@@ -108,9 +110,10 @@ h2 {
 
 .btn-result{
   position: fixed;
+  font-family: "Lucida Console", "Courier New", monospace;
   bottom: clamp(16px, 4vh, 32px);
   left: 50%;
-  transform: translateX(-65%);
+  transform: translateX(-70%);
 
   background-color: #FFC9B9;
   color: #4d3f36;
@@ -188,6 +191,7 @@ h2 {
 
 #name{
     font-size:10vw;
+    font-family: "Nunito", system-ui, sans-serif;
     /* position:relative; */
     z-index: 10;
     margin-bottom: 2rem;
