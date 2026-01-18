@@ -7,6 +7,7 @@ body {
     font-family: 'Montserrat';
     background: #2C6E49;
     color: #FFC9B9;
+    min-height: 100vh;
 }
 
 .camera {
@@ -14,9 +15,14 @@ body {
   background-color: #FFC9B9;
   border-radius: 30px;
   overflow: hidden;
-  display: inline-block;
+  display: block;
   position: relative;
-  left: center;
+}
+
+.camera-wrapper{
+    position:relative;
+    display:inline-block;
+    max-width:90vw;
 }
 
 .home {
@@ -103,6 +109,28 @@ h2 {
   border: none;
 }
 
+.btn-result{
+  position: fixed;
+  bottom: clamp(16px, 4vh, 32px);
+  left: 37%;
+
+  background-color: #FFC9B9;
+  color: #4d3f36;
+
+  width: auto;
+  height: auto;
+  
+  font-weight: bold;
+  font-size: clamp(1rem, 2.5vw, 1.4rem);
+  padding: clamp(5px, 2vw, 10px) clamp(10px, 4vw, 22px);
+
+  margin: 5%;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: transform 0.5s ease-in-out;
+  border: none;
+}
+
 .btn:hover {
   transform: translateY(-2px);
   transform: scale(1.05);
@@ -158,9 +186,14 @@ h2 {
 
 #timer-buttons{
     position: absolute;
-    left: 50%;
-    bottom: 15%;
+    left: 41.5%;
+    bottom: -40%;
     transform: translateX(-50%);
+    z-index:20;
+    display:flex;
+    justify-content: center;
+    white-space: nowrap;
+    padding:2em;
 }
 
 
