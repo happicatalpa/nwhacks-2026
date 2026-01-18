@@ -4,7 +4,7 @@ import Camera from '../components/Camera.jsx';
 import Timer from '../components/Timer.jsx'
 import SpeechToText from '../features/speech/speech-to-text.jsx'
 
-export default function Presenting({ setTranscript }) {
+export default function Presenting({ setTranscript, timeLimitSeconds }) {
   const [count, setCount] = useState(0)
 
 
@@ -12,7 +12,7 @@ export default function Presenting({ setTranscript }) {
     <>
       <h1>Presentation demo!!</h1>
       <div> 
-        <Timer start={30} />
+        <Timer start={timeLimitSeconds} />
         <SpeechToText setTranscript={setTranscript}/>
       </div>
       <div id="camera"> 
