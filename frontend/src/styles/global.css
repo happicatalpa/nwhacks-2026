@@ -1,3 +1,5 @@
+
+
 * {
   box-sizing: border-box;
 }
@@ -9,12 +11,22 @@ body {
   color: #DFFDFF;
 }
 
+#camera {
+  border: 15px solid #DFFDFF;
+  background-color: #DFFDFF;
+  border-radius: 30px;
+  overflow: hidden;
+  display: inline-block;
+  position: relative;
+  left: center;
+}
+
 button {
   background-color: #DFFDFF;
   color: #90BEDE;
   border: none;
   font-weight: bold;
-  padding: 5px 30px;
+  padding: 10px 30px;
   margin: 5px;
   border-radius: 10px;
   cursor: pointer;
