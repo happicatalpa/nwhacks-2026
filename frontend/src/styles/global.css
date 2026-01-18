@@ -179,13 +179,14 @@ h2 {
 
 #timer-buttons{
     position: absolute;
-    left: 40%;
+    left: 41.5%;
     bottom: -40%;
     transform: translateX(-50%);
     z-index:20;
     display:flex;
     justify-content: center;
     white-space: nowrap;
+    padding:2em;
 }
 
 
