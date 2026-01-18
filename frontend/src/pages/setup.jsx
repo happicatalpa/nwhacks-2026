@@ -16,7 +16,7 @@ export default function Setup({ setScript, setTimeLimitSeconds }) {
     <div> 
         <h1 className="sp-title">SETUP</h1>
         <div className="sp">
-            <h2 className="sp sp-text">input your script here!</h2>
+            <h2 className="sp sp-text">Input your script here!</h2>
             <textarea className="sp-input"
                 rows="10" 
                 cols="50" 
@@ -26,7 +26,7 @@ export default function Setup({ setScript, setTimeLimitSeconds }) {
         </div>
 
         <div className="timer-setup">
-            <h2>set timer</h2>
+            <h2>Set Timer</h2>
             <TimerSetter
                 setTimeLimitSeconds={setTimeLimitSeconds}
             />

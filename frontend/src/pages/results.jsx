@@ -60,21 +60,21 @@ export default function Results({script, transcript, currentSeconds, timeLimit})
   return (
     <div>
       <div className = "resultsPage"> 
-          <h1 className="sp-title">YAY speech finished!</h1>
+          <h1 className="sp-title">Congradulations!<br /> Here are your results!</h1>
           <TimeScore timeLimit={timeLimit} currentTime={currentSeconds} />
           {loading ? (
         <p>Loading results...</p>
       ) : (
         <>
-          <p>SCORE:</p>
-          <div style={{ whiteSpace: "pre-wrap", fontFamily: "monospace" }}>
+          <h1>SCORE:</h1>
+          <div className="results" style={{ whiteSpace: "pre-wrap", fontFamily: "monospace" }}>
             {formatResults()}
           </div>
         </>
       )}
 
         <Link to="/">
-          <button className="btn">BACK TO START</button>
+          <button className="btn-result">BACK TO START</button>
         </Link>
       </div>
       <img id="yaptrainerpos" src = "/yaptrainer.png"></img>
