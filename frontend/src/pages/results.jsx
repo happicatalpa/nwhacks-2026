@@ -17,8 +17,6 @@ export default function Results({script, transcript}) {
         if (checkedPoints) setCheckedKeyPoints(checkedPoints);
     };
 
-
-
   return (
     <div> 
         <h1>WOOHOO you finished your cool talk</h1>
@@ -32,10 +30,8 @@ export default function Results({script, transcript}) {
           <button onClick={handleGetKeyPoints} id="small">Back to Start</button>
         
         </Link>
-
         
-        
-        <img src = "/yaptrainer.png"></img>
+        <img id="yaptrainerpos" src = "/yaptrainer.png"></img>
     </div>
 
   );

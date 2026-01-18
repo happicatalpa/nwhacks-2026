@@ -111,3 +111,13 @@ button:hover {
   pointer-events: none;
 }
 
+#yaptrainerpos {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  width: clamp(950px, 18vw, 950px);
+  height: auto;
+  transform: translate(15%, 15%);
+  z-index: 0;
+  pointer-events: none;
+}
