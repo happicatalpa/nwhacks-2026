@@ -52,16 +52,17 @@ canvas {
   top: 23%;
   right: 5%;
   width: 20%;
-  height: 35%;
+  height: fit-content;
   border-radius: 15px;
   border: 10px solid #FFC9B9;
-  padding: 10px
+  padding: 2rem;
 }
+
 
 .setup-button {
   position: absolute;
   bottom: 6%;
-  right: 8%;
+  right: 6.5%;
 }
 
 h2 {
@@ -102,7 +103,7 @@ h2 {
   width: auto;
   height: auto;
   font-weight: bold;
-  padding: 5% 10%;
+  padding: 5% 7%;
   margin: 5%;
   border-radius: 10px;
   cursor: pointer;
@@ -112,7 +113,7 @@ h2 {
 
 .btn-timer {
   position: relative;
-  right: 11%;
+  right: 3%;
   align-items: center;
   border: none;
 }
@@ -167,6 +168,14 @@ h2 {
     width: 100%;
     z-index: 10;
     pointer-events: none;
+}
+
+.results {
+  border: 10px solid #FFC9B9;
+  border-radius: 10px;
+  padding: 1rem;
+  width: auto;
+  height: auto;
 }
 
 .background {
