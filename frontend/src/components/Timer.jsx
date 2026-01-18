@@ -39,7 +39,7 @@ export default function Timer({ start = 60, currentSeconds, setCurrentSeconds })
 
     useEffect(() => {
         if (isOvertime) {
-            setTextColor("#D68C45");
+            setTextColor("#d50532ff");
         } else {
             setTextColor("#FFC9B9");
         }
