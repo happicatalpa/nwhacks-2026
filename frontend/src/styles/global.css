@@ -125,12 +125,11 @@ button:hover {
 
 #home{
     text-align: left;
+    left:30%;
 }
 
 #home-buttons{
     position: fixed;
-    left: 30%;
     bottom: 30%;
-    transform: translateX(-50%);
     z-index: 10;
 }
