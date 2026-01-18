@@ -10,7 +10,7 @@ def request_key_points(script):
     client = genai.Client()
 
     prompt="""Take the following script and identify the key points of the script. 
-    Return a list of key points formatted as a javascript array in this exact format with no additional text: 
+    Return a list of key points formatted as an array in this exact format with no additional text: 
     ["key point 1", "key point 2", "key point 3"]
     Here is the script: """ + script
 
@@ -29,7 +29,7 @@ def compare_points_to_transcript(key_points, transcript):
     keeping only the items that were covered in the transcription. 
     Return the list in the exact same format with no additional words. Here's the list of points: """ + key_points + """\nHere
     is the full transcript: """ + transcript
-    
+
     response = client.models.generate_content(
         model="gemini-2.5-flash-lite", contents=prompt
     )
