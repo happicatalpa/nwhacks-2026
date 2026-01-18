@@ -23,7 +23,7 @@ def request_key_points(script):
     )
 
     data = {
-        "model": "google/gemini-2.5-flash",  # or any model OpenRouter supports
+        "model": "google/gemini-3-flash-preview",  # or any model OpenRouter supports
         "messages": [
             {"role": "user", "content": prompt}
         ]
@@ -49,7 +49,7 @@ def compare_points_to_transcript(key_points, transcript):
     )
 
     data = {
-        "model": "google/gemini-2.5-flash",
+        "model": "google/gemini-3-flash-preview",
         "messages": [
             {"role": "user", "content": prompt}
         ]

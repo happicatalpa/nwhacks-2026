@@ -3,8 +3,9 @@ import { Link } from "react-router-dom";
 
 import { getKeyPoints, getCheckedKeyPoints } from '../features/score/SpeechScore.jsx'
 import { useEffect, useState } from 'react'
+import TimeScore from "../features/score/TimeScore.jsx";
 
-export default function Results({script, transcript}) {
+export default function Results({script, transcript, currentSeconds, timeLimit}) {
     const [keyPoints, setKeyPoints] = useState('');
     const [checkedKeyPoints, setCheckedKeyPoints] = useState('');
     const [loading, setLoading] = useState(false);
@@ -58,18 +59,20 @@ export default function Results({script, transcript}) {
     
   return (
     <div>
-      <div> 
-        <h1 className="sp-title">Congratulations!<br /> Here are your results!</h1>
-        {loading ? (
-          <p>Loading results...</p>
-        ) : (
-          <>
-            <h1>SCORE:</h1>
-            <div style={{ whiteSpace: "pre-wrap", fontFamily: "monospace" }}>
-              {formatResults()}
-            </div>
-          </>
-        )}
+      <div className = "resultsPage"> 
+          <h1 className="sp-title">YAY speech finished!</h1>
+          <TimeScore timeLimit={timeLimit} currentTime={currentSeconds} />
+          {loading ? (
+        <p>Loading results...</p>
+      ) : (
+        <>
+          <p>SCORE:</p>
+          <div style={{ whiteSpace: "pre-wrap", fontFamily: "monospace" }}>
+            {formatResults()}
+          </div>
+        </>
+      )}
+
         <Link to="/">
           <button className="btn">BACK TO START</button>
         </Link>

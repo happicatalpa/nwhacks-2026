@@ -17,7 +17,7 @@ function App() {
     const [script, setScript] = useState("");
     const [transcript, setTranscript] = useState("");
     const [timeLimitSeconds, setTimeLimitSeconds] = useState("");
-    const [overtime, setOvertime] = useState();
+    const [currentSeconds, setCurrentSeconds] = useState(0);
 
 
     return (
@@ -25,8 +25,8 @@ function App() {
         <Routes>
         <Route path="/" element={<Home />} />          {/* Home page */}
         <Route path="/setup" element={<Setup setScript={setScript} setTimeLimitSeconds={setTimeLimitSeconds} />} />    {/* About page */}
-        <Route path="/present" element={<Presenting setTranscript={setTranscript} timeLimitSeconds={timeLimitSeconds}/>} />    {/* About page */}
-        <Route path="/results" element={<Results script={script} transcript={transcript}/>} />    {/* About page */}
+        <Route path="/present" element={<Presenting setTranscript={setTranscript} timeLimitSeconds={timeLimitSeconds} currentSeconds={currentSeconds} setCurrentSeconds={setCurrentSeconds}/>} />    {/* About page */}
+        <Route path="/results" element={<Results script={script} transcript={transcript} currentSeconds={currentSeconds} timeLimit={timeLimitSeconds}/>} />    {/* About page */}
 
         </Routes>
     </BrowserRouter>
