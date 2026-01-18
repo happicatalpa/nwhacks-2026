@@ -54,7 +54,7 @@ h2 {
   position: relative;
   margin: 0 auto;
   text-align: center;
-  font-size: clamp(2rem, 5vw, 5rem);
+  font-size: 80px;
 }
 
 .sp-input {
@@ -94,6 +94,13 @@ h2 {
 
 .btn-large {
   font-size: 3vw;
+  border: none;
+}
+
+.btn-timer {
+  position: relative;
+  right: 11%;
+  align-items: center;
   border: none;
 }
 

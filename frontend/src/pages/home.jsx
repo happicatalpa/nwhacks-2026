@@ -8,7 +8,7 @@ export default function Home() {
             <h1 id="name">Happy <br /> Yapper</h1>
             <div id="home-buttons">
                 <Link to="/setup">
-                    <button class="btn btn-large">START</button>
+                    <button className="btn btn-large">START</button>
                 </Link>
                 
             </div>

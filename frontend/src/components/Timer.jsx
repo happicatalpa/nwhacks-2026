@@ -1,10 +1,16 @@
 import { useState, useEffect } from "react";
 
-export default function Timer({ start = 60 }) {
+export default function Timer({ start = 60, setCurrentSeconds }) {
     const [timeLeft, setTimeLeft] = useState(start);
+    const [isOvertime, setIsOvertime] = useState(false);
+    const [textColor, setTextColor] = useState("white");
 
     useEffect(() => {
-        if (timeLeft <= 0) return;
+        setCurrentSeconds((t) => t - 1);
+        if (timeLeft <= 0) {
+            setIsOvertime(true);
+            return;
+        }
 
         const intervalId = setInterval(() => {
             setTimeLeft((t) => t - 1);
@@ -23,9 +29,17 @@ export default function Timer({ start = 60 }) {
         return `${mm}:${ss}`;
     };
 
+    useEffect(() => {
+        if (isOvertime) {
+            setTextColor("#D68C45");
+        } else {
+            setTextColor("#FFC9B9");
+        }
+    }, [isOvertime]);
+
     return (
         <div>
-            <h2 className="sp-title">Time Left: {formatTime(timeLeft)}</h2>
+            <h2 className="sp-title" style={{ color: textColor }}>Time Left: {formatTime(timeLeft)}</h2>
         </div>
 
     );
