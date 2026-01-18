@@ -20,7 +20,7 @@ def get_key_points():
     if "error" in result:
         return jsonify(result), 500
 
-    return jsonify(result)
+    return result
 
 
 @app.route("/compare-scripts", methods=["POST"])
