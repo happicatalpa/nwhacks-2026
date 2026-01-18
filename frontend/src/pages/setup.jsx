@@ -13,27 +13,29 @@ export default function Setup({ setScript, setTimeLimitSeconds }) {
     }
 
     return (
-    <div> 
-        <h1 className="sp-title">SETUP</h1>
-        <div className="sp">
-            <h2 className="sp sp-text">Input your script here!</h2>
-            <textarea className="sp-input"
-                rows="10" 
-                cols="50" 
-                defaultValue={textInput} 
-                onChange={(e) => setTextInput(e.target.value)} 
-            />
-        </div>
+        <div>
+            <h1 className="sp-title">SETUP</h1>
+            <div className="sp">
+                <h2 className="sp sp-text">Input your script here!</h2>
+                <textarea className="sp-input"
+                    rows="10"
+                    cols="50"
+                    defaultValue={textInput}
+                    onChange={(e) => setTextInput(e.target.value)}
+                />
+            </div>
 
-        <div className="timer-setup">
-            <h2>set timer</h2>
-            <TimerSetter
-                setTimeLimitSeconds={setTimeLimitSeconds}
-            />
-        </div> 
-        <div className="setup-button">
-            <button className="btn btn-large" onClick={handleNext}>START<br /> PRESENTATION!</button>
+            <div className="setup-container">
+                <div className="timer-setup">
+                    <h2>set timer</h2>
+                    <TimerSetter
+                        setTimeLimitSeconds={setTimeLimitSeconds}
+                    />
+                </div>
+                <div className="setup-button">
+                    <button className="btn btn-large" onClick={handleNext}>START<br /> PRESENTATION!</button>
+                </div>
+            </div>
         </div>
-    </div>
     );
 }
