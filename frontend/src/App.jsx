@@ -17,6 +17,7 @@ function App() {
     const [script, setScript] = useState("");
     const [transcript, setTranscript] = useState("");
     const [timeLimitSeconds, setTimeLimitSeconds] = useState("");
+    const [overtime, setOvertime] = useState();
 
 
     return (
